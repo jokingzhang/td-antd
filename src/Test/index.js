@@ -7,7 +7,7 @@ class Test extends React.PureComponent {
     const { title = 'test' } = this.props;
 
     return (
-      <div>{title}</div>
+      <div {...this.props}>{title}</div>
     );
   }
 }
