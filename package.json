@@ -1,0 +1,46 @@
+{
+  "name": "td-antd-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf dist && webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "16.6.3",
+    "react-proptypes": "1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "7.1.4",
+    "babel-plugin-module-resolver": "3.1.1",
+    "babel-plugin-react-transform": "3.0.0",
+    "babel-preset-env": "1.7.0",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "0.28.11",
+    "eslint": "5.6.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "3.3.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.1",
+    "eslint-plugin-react": "7.11.1",
+    "less": "3.0.4",
+    "less-loader": "4.1.0",
+    "mini-css-extract-plugin": "0.4.0",
+    "postcss-loader": "2.1.5",
+    "react-transform-hmr": "1.0.4",
+    "style-loader": "0.21.0",
+    "stylelint": "9.5.0",
+    "stylelint-config-standard": "18.2.0",
+    "webpack": "4.8.3",
+    "webpack-cli": "2.1.3"
+  }
+}
