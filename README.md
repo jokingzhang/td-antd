@@ -1,14 +1,14 @@
-> react-antd 基础上二次封装的业务组件。 
+> react-antd 基础上二次封装的业务组件。
 
 ### 组件 API
 
-- [传送门]()
+- [传送门](./API.md)
 
 ### 开发
 
 1. 在 src 目录下创建组件文件并进行开发，如 Test/index.js
 2. 在 src/index.js 中向外暴露该组件接口
-	
+
 	```
 	export { default as Test } from './Test';
 	```
