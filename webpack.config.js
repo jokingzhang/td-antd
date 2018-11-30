@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {
+  mode: 'production', // production
   entry: './src/index.js',
   output: {
     filename: 'index.js',
@@ -40,9 +41,9 @@ const config = {
   ],
   // 当遇到全局变量如下所示时，webpack 将会忽略不进行打包，且需要外部引入 CDN 资源
   externals: {
-    // 'react': 'React',
-    // 'antd': 'Antd',
-    // 'react-dom': 'ReactDOM',
+    'react': 'React',
+    'antd': 'Antd',
+    'react-dom': 'ReactDOM',
   },
 };
 
