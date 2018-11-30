@@ -1,8 +1,10 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const nodeExternals = require('webpack-node-externals'); // 忽略 node_modules 进项目，并告知寄主有哪些依赖
 
 const config = {
   mode: 'production', // production
+  target: 'node',
   entry: './src/index.js',
   output: {
     filename: 'index.js',
@@ -39,12 +41,7 @@ const config = {
       chunkFilename: 'index.css',
     }),
   ],
-  // 当遇到全局变量如下所示时，webpack 将会忽略不进行打包，且需要外部引入 CDN 资源
-  externals: {
-    'react': 'React',
-    'antd': 'Antd',
-    'react-dom': 'ReactDOM',
-  },
+  externals: [nodeExternals()],
 };
 
 module.exports = config;

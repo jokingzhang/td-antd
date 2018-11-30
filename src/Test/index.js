@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 
 class Test extends React.PureComponent {
   componentDidMount() {}
@@ -7,7 +7,7 @@ class Test extends React.PureComponent {
     const { title = 'test' } = this.props;
 
     return (
-      <div {...this.props}>{title}</div>
+      <div>{title}</div>
     );
   }
 }
