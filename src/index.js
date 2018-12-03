@@ -1,2 +1,1 @@
-export { default as Test } from './Test';
-export { default as FormItem } from './FormItem';
+export { default as FormItem } from './components/FormItem';

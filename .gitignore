@@ -27,4 +27,4 @@ jspm_packages
 *.zip
 jsconfig.json
 .prettierrc
-
+dist
