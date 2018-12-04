@@ -8,11 +8,11 @@ const nodeExternals = require('webpack-node-externals');
 const isAnalyze = process.env.ANALYZE === 'true';
 const plugins = [
   new CleanWebpackPlugin('./dist'),
-  new OptimizeCss(),
   new MiniCssExtractPlugin({
     filename: 'index.css',
     chunkFilename: 'index.css',
   }),
+  new OptimizeCss(),
 ];
 isAnalyze && plugins.push(new BundleAnalyzerPlugin());
 
@@ -46,6 +46,9 @@ const config = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.less', '.css'],
   },
   // 插件功能
   plugins: plugins,

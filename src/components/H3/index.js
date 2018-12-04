@@ -15,7 +15,8 @@
 
 import React from 'react';
 import { Button } from 'antd';
-import './index.less';
+
+require('./index.less');
 
 function H3({ className, children, ...props }) {
   const {
