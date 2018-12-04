@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCss = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const nodeExternals = require('webpack-node-externals');
@@ -7,6 +8,7 @@ const nodeExternals = require('webpack-node-externals');
 const isAnalyze = process.env.ANALYZE === 'true';
 const plugins = [
   new CleanWebpackPlugin('./dist'),
+  new OptimizeCss(),
   new MiniCssExtractPlugin({
     filename: 'index.css',
     chunkFilename: 'index.css',
