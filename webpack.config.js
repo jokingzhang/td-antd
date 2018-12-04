@@ -1,24 +1,35 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const nodeExternals = require('webpack-node-externals'); // 忽略 node_modules 进项目，并告知寄主有哪些依赖
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const nodeExternals = require('webpack-node-externals');
+
+const isAnalyze = process.env.ANALYZE === 'true';
+const plugins = [
+  new CleanWebpackPlugin('./dist'),
+  new MiniCssExtractPlugin({
+    filename: 'index.css',
+    chunkFilename: 'index.css',
+  }),
+];
+isAnalyze && plugins.push(new BundleAnalyzerPlugin());
 
 const config = {
-  mode: 'production', // production
+  mode: 'production',
   target: 'node',
   entry: './src/index.js',
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
-    libraryTarget: 'commonjs2',
+    libraryTarget: 'umd',
+    library: 'ReactCmp',
   },
   module: {
     rules: [
       {
         test: /(\.jsx|\.js)$/,
         use: ['babel-loader'],
-        exclude: /node_modules/,
-      },
-      {
+      }, {
         test: /\.css|\.less$/,
         use: [
           MiniCssExtractPlugin.loader,
@@ -35,12 +46,7 @@ const config = {
     ],
   },
   // 插件功能
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'index.css',
-      chunkFilename: 'index.css',
-    }),
-  ],
+  plugins: plugins,
   externals: [nodeExternals()],
 };
 
