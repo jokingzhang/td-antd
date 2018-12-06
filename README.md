@@ -14,12 +14,12 @@
 	export { default as Test } from './Test';
 	```
 
-### 测试
+### 本地测试
 
 > 将开发好的项目进行打包
 
 ```
-npm run build
+npm run build-dev
 ```
 
 > 将包文件暴露到全局环境，供其他项目引用并进行本地测试<br/>
@@ -40,7 +40,18 @@ npm link td-antd
 import { Test } from 'td-antd';
 ```
 
-> 卸载
+> 样式引入
+
+1. 在 src/index.less 目录中引入各个组件的样式文件，请注意路径设置。
+2. 然后执行 npm run build-dev 进行打包。
+3. 查看 dist 目录下是否有 index.less 文件。
+4. 宿主项目中引入样式
+
+	```
+	import 'td-antd/dist/index.less';
+	```
+
+> 卸载组件
 
 ```
 npm unlink td-antd
@@ -48,3 +59,20 @@ npm unlink td-antd
 
 - `注意`
 	- 宿主项目在使用 npm link 引入 td-antd 进行打包时，会打包双份 antd 源码，请不要这样做。正确做法是使用 npm 发布的包版本。
+
+### 发布
+
+> npm run build && npm publish
+
+项目中使用，安装依赖
+
+```
+npm install --save td-antd
+```
+
+使用
+
+```
+import 'td-antd/dist/index.css'; // 引入样式，引入一次即可
+import { H3, LinkBtn } from 'td-antd'; // 引入组件
+```

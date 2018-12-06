@@ -4,8 +4,10 @@ const OptimizeCss = require('optimize-css-assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const nodeExternals = require('webpack-node-externals');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isAnalyze = process.env.ANALYZE === 'true';
+const isCopy = process.env.COPY === 'true';
 const plugins = [
   new CleanWebpackPlugin('./dist'),
   new MiniCssExtractPlugin({
@@ -14,10 +16,12 @@ const plugins = [
   }),
   new OptimizeCss(),
 ];
+
 isAnalyze && plugins.push(new BundleAnalyzerPlugin());
+// 将 index.less 复制到 dist目录下，以供在本地测试时使用
+isCopy && plugins.push(new CopyWebpackPlugin([{ from: 'src/index.less' }]));
 
 const config = {
-  mode: 'production',
   target: 'node',
   entry: './src/index.js',
   output: {
