@@ -1,6 +1,6 @@
 ## FormItem
 
-- 描述：Form.Item 的二次封装
+> Form.Item 的二次封装
 
 ### API
 
@@ -17,7 +17,7 @@
 |extra|表单下方的提示文案|string||
 |readOnly|是否只读，文本模式|boolean|false|
 |isChildren|当`readOnly=true`时, 此参数可用，并使用`children`|boolean|false|
-|children|子节点|ReactNode|`<Input />`|
+|children|子节点| reactNode |`<Input />`|
 |extraRules|额外的规则，用法同 rules|array / object||
 |valuePropName|同名表单字段监控|string||
 |inputProps|Input 组件的属性 API|object|{}|
@@ -25,11 +25,11 @@
 
 ### demo
 
-受控组件, form 对象必须要有
+受控组件, form 对象必须有，由 Form.create() 创建
 
 ```
 <FormItem
-  form={form}
+  form={this.props.form}
   label="测试"
   fieldName="orgName"
   initialValue="123"
@@ -60,4 +60,184 @@
 >
 	// 自定义回显数据
 </FormItem>
+```
+
+## MoneyInput
+
+> Form.Item 的二次封装，带单位的 input 受控组件
+
+### API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|form|经 Form.create() 包装过的组件会自带 this.props.form 属性，直接传给 MoneyInput 即可，`必须有`|object||
+|formItemLayout|表单布局样式|object|`{labelCol: { sm: { span: 10 } },wrapperCol: { sm: { span: 14 } }}`|
+|cols| formItemLayout 的简使用，数组表示左右占有空间，合计24|Array|[10, 14]|
+|initialValue|初始值，回显使用|string||
+|label|标签|string||
+|fieldName|字段名，`必须有`|string||
+|required|表单项是否为必填|boolean|true|
+|validatorCallback|自定义校验规则，必须返回callback('错误码')|
+|unit|单位|string|''|
+|isNegative|是否可为负数，默认不可以| boolean |false|
+|isInteger|值是否为整数，默认不是|boolean |false|
+|inputProps|Input 组件的属性 API|object|{}|
+|readOnly|只读，一般回显使用| boolean |false|
+
+### demo
+
+```
+<MoneyInput
+  form={this.props.form}
+  label="金额"
+  fieldName="money"
+  unit="元"
+/>
+```
+
+## H3
+
+> 带按钮的 h3 组件
+
+### API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|className|样式|string||
+|title|标题名称|string||
+|btnVisible|是否显示按钮|boolean|true|
+|disabled|按钮是否可用|boolean|false|
+|onClick|按钮事件| function ||
+|line|分割线| boolean |true|
+|leftExtra|标题栏左侧额外展示区域|string / reactNode||
+|rightExtra|标题栏右侧额外展示区域|string / reactNode||
+
+### demo
+
+```
+<H3
+  title="标题"
+  leftExtra={<div>左侧额外展示区域</div>}
+>
+	children 内容
+</H3>
+```
+
+## LinkBtn
+
+> 样式和 a 标签一样的 button 组件
+
+### API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|className|样式|string||
+
+### demo
+
+```
+<LinkBtn onClick={() => {console.log('click')}}>查看</LinkBtn>
+```
+
+## ModalBox
+
+> Modal 的二次封装，让浮层更方便的显示和隐藏
+
+### API
+
+> 原 Modal 的 API 都能使用
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|show(callback)|浮层显示的函数|function||
+|hide(callback)|浮层隐藏的函数|function||
+|handleOk|点击确认按钮的回调函数|function||
+|handleCancel|点击取消按钮的回调函数|function||
+
+### demo
+
+```
+import React from 'react';
+import { ModalBox } from 'td-antd';
+
+class Demo extends React.PureComponent {
+  render() {
+    return(
+      <React.Fragment>
+        <button
+          onClick={() => {
+            this.modalRef.show(() => {
+              console.log('show'); // 回调函数可省略
+            })
+          }}
+        >
+          show modal
+        </button>
+        <ModalBox
+          ref={(r) => {this.modalRef = r}}
+          title="标题"
+          width={600}
+        >
+          test...
+        </ModalBox>
+      </React.Fragment>
+    );
+  }
+}
+
+export default Demo;
+```
+
+## FormItemSelect
+
+> FormItem + Select 的受控组件，可以动态获取数据进行渲染
+
+### API
+
+> 可以使用 FormItem 的 API。如：label、fieldName、cols 等等
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|fetchUrl|请求的接口|string|''|
+|callback(res)|请求成功后的回调函数，必须返回后端给与的列表数据，此回调函数必须有，且有返回值|function(res){}||
+|fields|渲染所需要匹配的字段名。Array[0] 表示 code；Array[1] 表示 name；且 Array[1] 可以是一个函数，并具有返回值|Array|['', '']|
+|selectProps|Select 组件的 API 都可使用|||
+|readOnly 和 isChildren|两个配合使用达到详情显示效果| boolean |false|
+
+### demo
+
+假设后端返回数据如下：
+
+```
+{
+	dataObject: {
+		datas: [
+			{
+				orgCode: 'code1',
+				orgName: '机构1',
+			}, {
+				orgCode: 'code2',
+				orgName: '机构2',
+			},
+		],
+	}
+}
+```
+
+```
+<FormItemSelect
+  form={this.props.form}
+  fetchUrl="/trtprod/trtOrg/detailList.json"
+  fields={['orgCode', 'orgName']}
+  // fields={['orgCode', (item) => {
+            return `这是机构：${item. orgName}`;
+     }]}
+  label="机构"
+  fieldName="sponsorOrgCode"
+  // initialValue={data.sponsorOrgCode}
+  callback={res => {
+  	 // 回调函数中必须返回列表渲染的数据
+    return res.dataObject.datas;
+  }}
+/>
 ```

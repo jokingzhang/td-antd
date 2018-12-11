@@ -8,8 +8,8 @@
 *   onClick: 按钮事件
 *   btnVisible：按钮是否显示，默认 = true = 显示
 *   line: 分割线，默认显示
-*   renderLeftExtra: 标题左边额外的回调，=> ReactNode 和 string
-*   renderRightExtra: 标题右边额外的回调，=> ReactNode 和 string
+*   leftExtra: 标题左边额外的回调，=> ReactNode 和 string
+*   rightExtra: 标题右边额外的回调，=> ReactNode 和 string
 * }
 * */
 
@@ -26,8 +26,8 @@ function H3({ className, children, ...props }) {
     onClick = () => {},
     size = 'small',
     line = true,
-    renderLeftExtra,
-    renderRightExtra,
+    leftExtra,
+    rightExtra,
   } = props;
 
   const renderButton = () => {
@@ -52,9 +52,9 @@ function H3({ className, children, ...props }) {
       <h3 className={`td-h3 ${line ? 'td-h3-line' : ''}`}>
         <span>{title}</span>
         {renderButton()}
-        {renderLeftExtra}
+        {leftExtra}
         <div className="td-h3-right-extra">
-          {renderRightExtra}
+          {rightExtra}
         </div>
       </h3>
       <div className={`${line ? 'td-h3-content' : ''}`}>
