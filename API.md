@@ -241,3 +241,64 @@ export default Demo;
   }}
 />
 ```
+
+## CollapsePanel
+
+> 带自定义区域内容的折叠面板，内部只有一层 Panel 组件。如果需要多个 Panel 组件，请使用 antd 官方的 Collapse 组件
+
+### API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|header|折叠面板标题|string|''|
+|showArrow|是否显示箭头| boolean |false|
+|disabled|是否禁用折叠面板| boolean |false|
+|rightExtra|面板栏右侧自定义内容|string / reactNode||
+
+### demo
+
+```
+<CollapsePanel
+  header="折叠面板"
+  rightExtra={<button>按钮</button>}
+>
+  children 内容
+</CollapsePanel>
+```
+
+## DragModal
+
+> 在原 Modal 基础上封装的”可拖拽“浮层。支持多浮层拖拽和展示使用。
+
+### API
+
+> 支持所有原 Modal 中的 API
+
+### demo
+
+```
+import React from 'react';
+import { DragModal } from 'td-antd';
+import 'td-antd/dist/index.less';
+
+export default class Demo extends React.PureComponent {
+  state = {
+    visible: false,
+  };
+
+  render() {
+    const { visible } = this.state;
+
+    return (
+      <DragModal
+        visible={visible}
+        onOk={() => {
+          this.setState({ visible: false });
+        }}
+      >
+        22
+      </DragModal>
+    );
+  }
+}
+```

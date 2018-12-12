@@ -1,8 +1,3 @@
-/*
-* 折叠面板
-* }
-* */
-
 import React from 'react';
 import { Collapse } from 'antd';
 import './index.less';
@@ -12,7 +7,7 @@ function CollapsePanel({ className, children, ...props }) {
     // header = '', // 折叠面板标题
     // showArrow = false  // 是否显示箭头
     // disabled = false // 是否禁用折叠面板
-    renderRightExtra,  // 头部右边额外的回调 => reactNode || string
+    rightExtra,  // 头部右边额外的回调 => reactNode || string
   } = props;
 
   return (
@@ -21,7 +16,7 @@ function CollapsePanel({ className, children, ...props }) {
         { children }
       </Collapse.Panel>
       <div className="td-collapse-right-extra">
-        {renderRightExtra}
+        {rightExtra}
       </div>
     </Collapse>
   );
