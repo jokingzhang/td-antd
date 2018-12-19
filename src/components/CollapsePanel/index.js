@@ -8,10 +8,11 @@ function CollapsePanel({ className, children, ...props }) {
     // showArrow = false  // 是否显示箭头
     // disabled = false // 是否禁用折叠面板
     rightExtra,  // 头部右边额外的回调 => reactNode || string
+    isOpen = true, // 是否展开，默认展开
   } = props;
 
   return (
-    <Collapse defaultActiveKey={['1']} className={`td-collapse ${className}`}>
+    <Collapse defaultActiveKey={[isOpen ? '1' : '0']} className={`td-collapse ${className}`}>
       <Collapse.Panel {...props} key="1">
         { children }
       </Collapse.Panel>

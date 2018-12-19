@@ -31,7 +31,6 @@ function FormItem({ className, children, ...props }) {
     required = true,
     validatorCallback = () => {},
     readOnly = false,
-    isChildren = false,
     extraRules = null,
     selectAction = false,
     inputProps = {},
@@ -47,9 +46,7 @@ function FormItem({ className, children, ...props }) {
         {...props}
         label={label}
       >
-        {
-          isChildren ? children : <span>{initialValue || ' -- '}</span>
-        }
+        {children || <span>{initialValue || ' -- '}</span>}
       </Form.Item>
     );
   }

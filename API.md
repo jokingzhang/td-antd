@@ -15,8 +15,7 @@
 |required|表单项是否为必填|boolean|true|
 |validatorCallback|自定义校验规则，必须返回callback('错误码')|function(value, callback)||
 |extra|表单下方的提示文案|string||
-|readOnly|是否只读，文本模式|boolean|false|
-|isChildren|当`readOnly=true`时, 此参数可用，并使用`children`|boolean|false|
+|readOnly|是否只读，文本模式。为 true 时，值 children > initialValue |boolean|false|
 |children|子节点| reactNode |`<Input />`|
 |extraRules|额外的规则，用法同 rules|array / object||
 |valuePropName|同名表单字段监控|string||
@@ -56,9 +55,9 @@
 <FormItem
   label="测试"
   readOnly
-  isChildren
+  initialValue="123" // 此时 children 存在时，initialValue 无效
 >
-	// 自定义回显数据
+	222222
 </FormItem>
 ```
 
@@ -254,6 +253,7 @@ export default Demo;
 |showArrow|是否显示箭头| boolean |false|
 |disabled|是否禁用折叠面板| boolean |false|
 |rightExtra|面板栏右侧自定义内容|string / reactNode||
+|isOpen|是否展开|boolean|true|
 
 ### demo
 
