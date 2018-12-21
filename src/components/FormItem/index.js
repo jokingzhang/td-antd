@@ -2,8 +2,9 @@
 * form.item 组件
 * 默认使用 Input 组件
 * API: {
-*   form: 受控组件对象
-*   formItemLayout: 表单排序样式
+*   form: 受控组件对象，不传时，则"只读"
+*   formItemLayout: 表单排列样式，可选择 "cols" 的方式来设置
+*     cols(Array): 标签布局，[a, b] a = label展示, b = field展示
 *   initialValue: 初始值
 *   label: 名称
 *   required: 是否为必填项
@@ -30,14 +31,13 @@ function FormItem({ className, children, ...props }) {
     initialValue = undefined,
     required = true,
     validatorCallback = () => {},
-    readOnly = false,
     extraRules = null,
     selectAction = false,
     inputProps = {},
     valuePropName = undefined, // 适用switch场景
   } = props;
 
-  if (readOnly) {
+  if (!form) {
     return (
       <Form.Item
         style={{ marginBottom: 0 }}

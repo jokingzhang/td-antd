@@ -6,7 +6,7 @@
 
 |参数|说明|类型|默认值|
 |:--|:--|:--|:--|
-|form|经 Form.create() 包装过的组件会自带 this.props.form 属性，直接传给 FormItem 即可，`必须有`|object||
+|form|经 Form.create() 包装过的组件会自带 this.props.form 属性，直接传给 FormItem 即可。`如果无，则该表单为“只读”`|object||
 |formItemLayout|表单布局样式|object|`{labelCol: { sm: { span: 10 } },wrapperCol: { sm: { span: 14 } }}`|
 |cols| formItemLayout 的简使用，数组表示左右占有空间，合计24|Array|[10, 14]|
 |initialValue|初始值，回显使用|string||
@@ -15,10 +15,9 @@
 |required|表单项是否为必填|boolean|true|
 |validatorCallback|自定义校验规则，必须返回callback('错误码')|function(value, callback)||
 |extra|表单下方的提示文案|string||
-|readOnly|是否只读，文本模式。为 true 时，值 children > initialValue |boolean|false|
 |children|子节点| reactNode |`<Input />`|
 |extraRules|额外的规则，用法同 rules|array / object||
-|valuePropName|同名表单字段监控|string||
+|valuePropName|同名表单字段监控，适用 switch 场景|string||
 |inputProps|Input 组件的属性 API|object|{}|
 |selectAction|children 是否为 Select 组件，如果是，则提示信息不同|boolean|false|
 
@@ -41,12 +40,11 @@
 />
 ```
 
-预览数据，不需要 form 参数，必须传 readOnly
+预览数据，不需要 form 参数
 
 ```
 <FormItem
   label="测试"
-  readOnly
   initialValue="123"
 />
 
@@ -54,7 +52,6 @@
 
 <FormItem
   label="测试"
-  readOnly
   initialValue="123" // 此时 children 存在时，initialValue 无效
 >
 	222222
@@ -193,7 +190,7 @@ export default Demo;
 
 ### API
 
-> 可以使用 FormItem 的 API。如：label、fieldName、cols 等等
+> 继承 FormItem 的 API。如：form、label、fieldName、cols 等等
 
 |参数|说明|类型|默认值|
 |:--|:--|:--|:--|
@@ -201,7 +198,6 @@ export default Demo;
 |callback(res)|请求成功后的回调函数，必须返回后端给与的列表数据，此回调函数必须有，且有返回值|function(res){}||
 |fields|渲染所需要匹配的字段名。Array[0] 表示 code；Array[1] 表示 name；且 Array[1] 可以是一个函数，并具有返回值|Array|['', '']|
 |selectProps|Select 组件的 API 都可使用|||
-|readOnly 和 isChildren|两个配合使用达到详情显示效果| boolean |false|
 
 ### demo
 

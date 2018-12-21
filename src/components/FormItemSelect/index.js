@@ -1,5 +1,5 @@
 /*
-* 异步请求的搜索 select 的 FormItem 组件
+* 异步请求的搜索 select 组件，继承 FormItem 的 API
 * API：{
 *   fetchUrl: 组件请求的接口，如果有，则使用该接口进行请求。
 *     有值：则使用该接口进行请求。 API.type 无效
@@ -9,7 +9,7 @@
 *   fields：['orgCode', 'orgName' || function] 可以配合 API.fetchUrl 使用，Option 渲染使用
 *     fields[1] 为 function 时，则可自定义需要渲染的内容
 *   selectProps：{}。select 属性。如 selectProps: { onChange: (value) => {} } 等
-*   readOnly、isChildren：只读，一般详情页使用
+*   data(Array)：数据源。当该属性存在时，fetchUrl、callback 无效，且不会发送异步请求
 * }
 * */
 
@@ -19,19 +19,21 @@ import FormItem from '../FormItem';
 
 class FormItemSelect extends React.PureComponent {
   state = {
-    data: [],
+    data: this.props.data || [],
   };
 
   componentDidMount() {
-    const { fetchUrl, callback = () => {} } = this.props;
+    const { data, fetchUrl, callback = () => {} } = this.props;
 
-    fetch(fetchUrl, {
-      credentials: 'include',
-    }).then(response => response)
-      .then(response => response.json())
-      .then((res) => {
-        this.setState({ data: callback(res) });
-      }).catch((error) => error);
+    if (!data) {
+      fetch(fetchUrl, {
+        credentials: 'include',
+      }).then(response => response)
+        .then(response => response.json())
+        .then((res) => {
+          this.setState({ data: callback(res) });
+        }).catch((error) => error);
+    }
   }
 
   renderRead = (data, fields, initialValue) => {
@@ -46,29 +48,30 @@ class FormItemSelect extends React.PureComponent {
 
   render() {
     const { data } = this.state;
-    const { fields = ['', ''], selectProps = {}, readOnly = false, initialValue } = this.props;
+    const { form, fields = ['', ''], selectProps = {}, initialValue } = this.props;
 
     return(
       <FormItem
         {...this.props}
-      >{readOnly ? (
-        this.renderRead(data, fields, initialValue)
-      ) : (
-        <Select
-          {...selectProps}
-          style={{ width: '100%' }}
-          showSearch
-          filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-        >
-          {data.map(item => (
-            <Select.Option
-              key={item[fields[0]]}
-            >
-              {(typeof fields[1] === "function") ? fields[1](item) : item[fields[1]]}
-            </Select.Option>)
-          )}
-        </Select>
-      )}
+      >
+        {!form ? (
+          this.renderRead(data, fields, initialValue)
+        ) : (
+          <Select
+            {...selectProps}
+            style={{ width: '100%' }}
+            showSearch
+            filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+          >
+            {data.map(item => (
+              <Select.Option
+                key={item[fields[0]]}
+              >
+                {(typeof fields[1] === "function") ? fields[1](item) : item[fields[1]]}
+              </Select.Option>)
+            )}
+          </Select>
+        )}
       </FormItem>
     );
   }
