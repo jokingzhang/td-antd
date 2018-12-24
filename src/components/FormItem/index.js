@@ -28,7 +28,7 @@ function FormItem({ className, children, ...props }) {
         {...props}
         label={label}
       >
-        {children || <span>{initialValue || ' -- '}</span>}
+        {children || initialValue || ' -- '}
       </Form.Item>
     );
   }
