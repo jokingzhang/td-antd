@@ -5,8 +5,7 @@ import './index.less';
 function H3({ className, children, ...props }) {
   const {
     title = '',
-    btnText = '增加',
-    btnVisible = true,
+    btnText = '',
     disabled = false,
     onClick = () => {},
     size = 'small',
@@ -16,7 +15,7 @@ function H3({ className, children, ...props }) {
   } = props;
 
   const renderButton = () => {
-    if (btnVisible) {
+    if (typeof btnText === 'string' && btnText.length > 0) {
       return (
         <Button
           className="td-h3-btn"
@@ -38,9 +37,11 @@ function H3({ className, children, ...props }) {
         <span>{title}</span>
         {renderButton()}
         {leftExtra}
-        <div className="td-h3-right-extra">
-          {rightExtra}
-        </div>
+        {rightExtra ? (
+          <div className="td-h3-right-extra">
+            {rightExtra}
+          </div>
+        ) : null}
       </h3>
       <div className={`${line ? 'td-h3-content' : ''}`}>
         {children}

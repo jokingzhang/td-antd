@@ -96,7 +96,7 @@
 
 ## H3
 
-> 带按钮的 h3 组件
+> 带按钮的标题组件，基础标签为 h3
 
 ### API
 
@@ -104,7 +104,7 @@
 |:--|:--|:--|:--|
 |className|样式|string||
 |title|标题名称|string||
-|btnVisible|是否显示按钮|boolean|true|
+|btnText|按钮的文案，如果文案不存在，则按钮不显示|string|''|
 |disabled|按钮是否可用|boolean|false|
 |onClick|按钮事件| function ||
 |line|分割线| boolean |true|
