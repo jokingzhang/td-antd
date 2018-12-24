@@ -16,10 +16,9 @@
 |validatorCallback|自定义校验规则，必须返回callback('错误码')|function(value, callback)||
 |extra|表单下方的提示文案|string||
 |children|子节点| reactNode |`<Input />`|
-|extraRules|额外的规则，用法同 rules|array / object||
-|valuePropName|同名表单字段监控，适用 switch 场景|string||
-|inputProps|Input 组件的属性 API|object|{}|
-|selectAction|children 是否为 Select 组件，如果是，则提示信息不同|boolean|false|
+|extraRules|额外的规则，用法同 rules|array / object|[ ]|
+|valuePropName|适用 switch 场景，'checked'|string|'value'|
+|inputProps|Input 组件的属性 API|object|{ }|
 
 ### demo
 
@@ -31,6 +30,10 @@
   label="测试"
   fieldName="orgName"
   initialValue="123"
+  extraRules={{ // 额外的规则配置
+    pattern: '^[0-9]*$',
+    message: '请填写正确的数字金额',
+  }}
   validatorCallBack={(value, callback) => {
   	if (value === '') {
   		return callback('请填写xxx');
