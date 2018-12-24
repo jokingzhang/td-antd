@@ -1,20 +1,3 @@
-/*
-* 带单位的 input 受控组件
-* API: {
-*   form: 受控组件对象
-*   formItemLayout: 表单排序样式
-*   initialValue: 初始值
-*   label: 名称
-*   required: 是否为必填项
-*   fieldName: 字段名
-*   unit: 单位，默认 "万元"
-*   validatorCallback(value, callback): 自定义校验规则, value = string
-*   isNegative: 是否可为负数，默认 false = 不可以
-*   isInteger: 值是否为整数，默认 false = 不可以
-*   inputProps: Input 组件的属性，如： inputProps = { disabled: true }
-* }
-* */
-
 import React from 'react';
 import { Form, Input } from 'antd';
 

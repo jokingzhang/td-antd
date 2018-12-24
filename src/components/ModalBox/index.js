@@ -1,6 +1,3 @@
-/**
- * Modal组件
- */
 import React from 'react';
 import { Modal } from 'antd';
 import './index.less';

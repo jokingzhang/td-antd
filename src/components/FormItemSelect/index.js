@@ -1,18 +1,3 @@
-/*
-* 异步请求的搜索 select 组件，继承 FormItem 的 API
-* API：{
-*   fetchUrl: 组件请求的接口，如果有，则使用该接口进行请求。
-*     有值：则使用该接口进行请求。 API.type 无效
-*     无值：则使用默认接口进行请求。 API.type 有效
-*   type(string)：AGENCY（代理机构）/SPONSOR（发起机构）
-*   callback(data){}：成功后的回调函数，必须 return 后端返回的列表数据
-*   fields：['orgCode', 'orgName' || function] 可以配合 API.fetchUrl 使用，Option 渲染使用
-*     fields[1] 为 function 时，则可自定义需要渲染的内容
-*   selectProps：{}。select 属性。如 selectProps: { onChange: (value) => {} } 等
-*   data(Array)：数据源。当该属性存在时，fetchUrl、callback 无效，且不会发送异步请求
-* }
-* */
-
 import React from 'react';
 import { Select } from 'antd';
 import FormItem from '../FormItem';

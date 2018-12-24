@@ -1,18 +1,3 @@
-/*
-* 带按钮的 h3 组件
-* API：{
-*   className: 样式
-*   title: 标题名称
-*   disabled: 按钮是否可用
-*   size: 按钮大小，默认 = small [small, default]
-*   onClick: 按钮事件
-*   btnVisible：按钮是否显示，默认 = true = 显示
-*   line: 分割线，默认显示
-*   leftExtra: 标题左边额外的回调，=> ReactNode 和 string
-*   rightExtra: 标题右边额外的回调，=> ReactNode 和 string
-* }
-* */
-
 import React from 'react';
 import { Button } from 'antd';
 import './index.less';

@@ -1,11 +1,3 @@
-/*
-* 根据数据渲染 Select 组件
-* API: {
-*   data(object/array): 数据源，可以为 "对象" 或 "数组"
-*   field(array): ['key', 'value'] 当 data 为数组时，需要申明渲染字段。
-* }
-* */
-
 import React from 'react';
 import { Select } from 'antd';
 
