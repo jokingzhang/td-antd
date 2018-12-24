@@ -313,7 +313,7 @@ export default class Demo extends React.PureComponent {
 |参数|说明|类型|默认值|
 |:--|:--|:--|:--|
 |data|渲染所需要的数据源|object / array|{ }|
-|field|当 data 为数组时，需要申明渲染字段|array|[ ]|
+|fields|当 data 为数组时，需要申明渲染字段|array|[ ]|
 
 ### demo
 
@@ -344,5 +344,5 @@ const data2 = [
 <SelectMap data={data} />
 
 // 数据为数组时
-<SelectMap data={data2} field={['key', 'value']} />
+<SelectMap data={data2} fields={['key', 'value']} />
 ```

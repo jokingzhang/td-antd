@@ -2,11 +2,11 @@ import React from 'react';
 import { Select } from 'antd';
 
 function SelectMap({ ...props }) {
-  const { data = {}, field = [], style = { width: '100%' } } = props;
+  const { data = {}, fields = [], style = { width: '100%' } } = props;
 
   const renderOption = () => {
     if (Array.isArray(data)) {
-      return data.map(item => <Select.Option key={item[field[0]]}>{item[field[1]]}</Select.Option>);
+      return data.map(item => <Select.Option key={item[fields[0]]}>{item[fields[1]]}</Select.Option>);
     }
 
     return Object.keys(data).map(item => <Select.Option key={item}>{data[item]}</Select.Option>);
