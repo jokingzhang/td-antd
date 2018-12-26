@@ -1,10 +1,10 @@
 import React from 'react';
 import { Select } from 'antd';
 
-function SelectMap({ ...props }) {
-  const { data = [], fields = [], style = { width: '100%' } } = props;
+export default class SelectMap extends React.PureComponent {
+  renderOption = () => {
+    const { data = [], fields = [] } = this.props;
 
-  const renderOption = () => {
     if (Array.isArray(data)) {
       if (data[0] && typeof data[0] === 'object') {
         return data.map(item => <Select.Option key={item[fields[0]]}>{item[fields[1]]}</Select.Option>);
@@ -15,11 +15,13 @@ function SelectMap({ ...props }) {
     return Object.keys(data).map(item => <Select.Option key={item}>{data[item]}</Select.Option>);
   };
 
-  return (
-    <Select {...props} style={style}>
-      {renderOption()}
-    </Select>
-  );
-}
+  render() {
+    const { style = { width: '100%' } } = this.props;
 
-export default SelectMap;
+    return (
+      <Select style={style} {...this.props}>
+        {this.renderOption()}
+      </Select>
+    );
+  }
+}
