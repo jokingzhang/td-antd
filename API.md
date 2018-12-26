@@ -313,14 +313,13 @@ export default class Demo extends React.PureComponent {
 |参数|说明|类型|默认值|
 |:--|:--|:--|:--|
 |data|渲染所需要的数据源|object / array|{ }|
-|fields|当 data 为数组时，需要申明渲染字段|array|[ ]|
+|fields|当 data 为数组时，且数组成员为对象时，需要申明渲染字段|array[key, value]|[ ]|
 
 ### demo
 
-以下为假设数据：
+> 普通对象
 
 ```
-// 普通对象
 const data = {
   Y: '年',
   S: '季',
@@ -329,7 +328,12 @@ const data = {
   D: '日',
 };
 
-// 数组
+<SelectMap data={data} />
+```
+
+> 数组、且数组成员为对象
+
+```
 const data2 = [
   { key: 'Y', value: '年' },
   { key: 'S', value: '季' },
@@ -337,12 +341,14 @@ const data2 = [
   { key: 'W', value: '周' },
   { key: 'D', value: '日' },
 ];
-```
 
-```
-// 数据为普通的对象时
-<SelectMap data={data} />
-
-// 数据为数组时
 <SelectMap data={data2} fields={['key', 'value']} />
+```
+
+> 普通数组
+
+```
+const data3 = ['年', '月', '日'];
+
+<SelectMap data={data3} />
 ```
