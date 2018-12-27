@@ -17,6 +17,10 @@ function FormItem({ className, children, ...props }) {
     extraRules = [],
     inputProps = {},
     valuePropName = 'value',
+    itemType = 'default',
+    unit = '',
+    isNegative = false,
+    isInteger = false,
   } = props;
 
   if (!form) {
@@ -35,10 +39,24 @@ function FormItem({ className, children, ...props }) {
 
   const rules = [{
     required,
-    message: `${label} 是必填项`,
+    message: `必填项`,
   }, {
     validator: (rule, value, callback) => {
       validatorCallback(value, callback, rule);
+
+      // 当类型为数字类型时，则内置校验规则
+      if (itemType === 'number') {
+        if (!isNegative && value < 0) {
+          callback(`${label}不能小于 0`);
+          return;
+        }
+
+        if (isInteger && value && !Number.isInteger(parseFloat(value))) {
+          callback('必须为整数');
+          return;
+        }
+      }
+
       callback();
     },
   }].concat(extraRules);
@@ -54,7 +72,9 @@ function FormItem({ className, children, ...props }) {
         initialValue,
         valuePropName,
       })(
-        children || <Input {...inputProps} />
+        (itemType === 'number') ?
+          <Input {...inputProps} type="number" addonAfter={unit} /> :
+          (children || <Input {...inputProps} />)
       )}
     </Form.Item>
   );

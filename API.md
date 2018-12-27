@@ -1,6 +1,7 @@
 ## FormItem
 
-> Form.Item 的二次封装
+> Form.Item 的二次封装<br/>
+> 1.0.7+ 版本，将 MoneyInput 合并到该组件中，以 itemType 进行区分
 
 ### API
 
@@ -19,12 +20,36 @@
 |extraRules|额外的规则，用法同 rules|array / object|[ ]|
 |valuePropName|适用 switch 场景，'checked'|string|'value'|
 |inputProps|Input 组件的属性 API|object|{ }|
+|itemType|申明组件类型，普通组件(default) / Number组件(number)|string|default|
+|😈当 itemType=number 时，则可以使用以下属性||||
+|unit|显示单位|string|' '|
+|isNegative|是否为负数，默认不可以| boolean |false|
+|isInteger|是否为整数，默认不是|boolean |false|
 
 ### demo
 
 受控组件, form 对象必须有，由 Form.create() 创建
 
 ```
+// 普通组件
+<FormItem
+  form={this.props.form}
+  label="测试"
+  fieldName="orgName"
+/>
+
+// 带 children 的组件
+<FormItem
+  form={this.props.form}
+  label="测试"
+  fieldName="orgName"
+>
+	<Select>
+		<Select.Option key="age">age</Select.Option>
+	</Select>
+</FormItem>
+
+// 增强使用
 <FormItem
   form={this.props.form}
   label="测试"
@@ -40,6 +65,15 @@
   	}
   	callback('请填写xxx');
   }}
+/>
+
+// 带单位的只能输入数字的组件
+<FormItem
+  form={this.props.form}
+  label="金额"
+  fieldName="momey"
+  itemType="number" // 申明组件类型
+  unit="元"
 />
 ```
 
@@ -59,39 +93,6 @@
 >
 	222222
 </FormItem>
-```
-
-## MoneyInput
-
-> Form.Item 的二次封装，带单位的 input 受控组件
-
-### API
-
-|参数|说明|类型|默认值|
-|:--|:--|:--|:--|
-|form|经 Form.create() 包装过的组件会自带 this.props.form 属性，直接传给 MoneyInput 即可，`必须有`|object||
-|formItemLayout|表单布局样式|object|`{labelCol: { sm: { span: 10 } },wrapperCol: { sm: { span: 14 } }}`|
-|cols| formItemLayout 的简使用，数组表示左右占有空间，合计24|Array|[10, 14]|
-|initialValue|初始值，回显使用|string||
-|label|标签|string||
-|fieldName|字段名，`必须有`|string||
-|required|表单项是否为必填|boolean|true|
-|validatorCallback|自定义校验规则，必须返回callback('错误码')|
-|unit|单位|string|''|
-|isNegative|是否可为负数，默认不可以| boolean |false|
-|isInteger|值是否为整数，默认不是|boolean |false|
-|inputProps|Input 组件的属性 API|object|{}|
-|readOnly|只读，一般回显使用| boolean |false|
-
-### demo
-
-```
-<MoneyInput
-  form={this.props.form}
-  label="金额"
-  fieldName="money"
-  unit="元"
-/>
 ```
 
 ## H3
