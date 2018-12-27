@@ -189,7 +189,8 @@ export default Demo;
 
 ## FormItemSelect
 
-> FormItem + Select 的受控组件，可以动态获取数据进行渲染
+> FormItem + Select 的受控组件，可以动态获取数据进行渲染。<br/>
+> 当 Select 回显多选数据时，initialValue = [code1, code2, code3]
 
 ### API
 
@@ -200,7 +201,7 @@ export default Demo;
 |fetchUrl|请求的接口|string|''|
 |callback(res)|请求成功后的回调函数，必须返回后端给与的列表数据，此回调函数必须有，且有返回值|function(res){}||
 |fields|渲染所需要匹配的字段名。Array[0] 表示 code；Array[1] 表示 name；且 Array[1] 可以是一个函数，并具有返回值|Array|['', '']|
-|selectProps|Select 组件的 API 都可使用|||
+|selectProps|Select 组件的 API 都可使用。当使用|||
 
 ### demo
 
