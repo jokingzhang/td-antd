@@ -21,7 +21,11 @@
 |valuePropName|适用 switch 场景，'checked'|string|'value'|
 |inputProps|Input 组件的属性 API|object|{ }|
 |itemType|申明组件类型，普通组件(default) / Number组件(number)|string|default|
-|😈当 itemType=number 时，则可以使用以下属性||||
+
+> 当 itemType="number" 时，只能输入数字，并可以使用以下属性
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
 |unit|显示单位|string|' '|
 |isNegative|是否为负数，默认不可以| boolean |false|
 |isInteger|是否为整数，默认不是|boolean |false|
@@ -315,7 +319,7 @@ export default class Demo extends React.PureComponent {
 |参数|说明|类型|默认值|
 |:--|:--|:--|:--|
 |data|渲染所需要的数据源|object / array|{ }|
-|fields|当 data 为数组时，且数组成员为对象时，需要申明渲染字段|array[key, value]|[ ]|
+|fields|当 data 为数组时，且数组成员为对象时，需要申明渲染字段|array[object]|[ ]|
 
 ### demo
 
