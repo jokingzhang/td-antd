@@ -24,6 +24,7 @@ class FormItem extends React.PureComponent {
       unit = '',
       isNegative = false,
       isInteger = false,
+
     } = this.props;
 
     if (!form) {

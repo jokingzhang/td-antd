@@ -1,6 +1,6 @@
 {
   "name": "td-antd",
-  "version": "1.0.7",
+  "version": "1.0.7-beta",
   "description": "",
   "main": "dist/index.js",
   "files": [

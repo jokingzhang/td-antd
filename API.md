@@ -22,7 +22,8 @@
 |inputProps|Input 组件的属性 API|object|{ }|
 |itemType|申明组件类型，普通组件(default) / Number组件(number)|string|default|
 
-> 当 itemType="number" 时，只能输入数字，并可以使用以下属性
+> 当 itemType="number" 时，只能输入数字，并可以使用以下属性<br />
+> 遵循 input 的 type="number" 的 w3c 规则
 
 |参数|说明|类型|默认值|
 |:--|:--|:--|:--|
@@ -357,4 +358,44 @@ const data2 = [
 const data3 = ['年', '月', '日'];
 
 <SelectMap data={data3} />
+```
+
+## SearchForm
+
+> 列表页面的 form 搜索，由 Form 封装。内部由 Row 进行包裹，调用时可以使用 Col 进行布局
+
+### API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|btnText|按钮文案，为空字符时，按钮不显示|string|查询|
+|callback(values)|搜索后的回调函数，返回表单字段|fun||
+|children(formProps)|子组件，函数，需要返回 ReactNode。formProps = { form, required: false } |fun||
+
+### demo
+
+```
+import { Col } from 'antd';
+import { FormItem, SearchForm } from 'td-antd';
+
+<SearchForm callback={() => {}}>
+  {(formProps) => (
+    <React.Fragment>
+      <Col span={6}>
+        <FormItem
+          {...formProps}
+          label="编号"
+          fieldName="supplyNo"
+        />
+      </Col>
+      <Col span={6}>
+        <FormItem
+          {...formProps}
+          label="名称"
+          fieldName="name"
+        />
+      </Col>
+    </React.Fragment>
+  )}
+</SearchForm>
 ```

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Select } from 'antd';
-import fetch from 'dva/fetch';
 import FormItem from '../FormItem';
 
 class FormItemSelect extends React.PureComponent {
