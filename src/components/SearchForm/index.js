@@ -1,6 +1,8 @@
-import React from 'react';
-import { Form, Button, Row } from 'antd';
+import * as React from 'react';
+import * as Antd from 'antd';
 import './index.less';
+
+const { Form, Button, Row } = Antd;
 
 class SearchForm extends React.PureComponent {
   handleSearch = (e) => {

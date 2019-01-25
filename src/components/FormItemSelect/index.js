@@ -1,6 +1,8 @@
-import React from 'react';
-import { Select } from 'antd';
+import * as React from 'react';
+import * as Antd from 'antd';
 import FormItem from '../FormItem';
+
+const Select = Antd.Select;
 
 class FormItemSelect extends React.PureComponent {
   constructor(props) {

@@ -1,6 +1,6 @@
 {
   "name": "td-antd",
-  "version": "1.0.7-beta",
+  "version": "1.0.8-beta1",
   "description": "",
   "main": "dist/index.js",
   "files": [
@@ -28,6 +28,7 @@
     "antd": ">=3.9.0"
   },
   "devDependencies": {
+    "antd": "3.10.8",
     "babel-core": "6.26.3",
     "babel-eslint": "10.0.1",
     "babel-loader": "7.1.4",

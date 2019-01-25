@@ -1,5 +1,7 @@
-import React from 'react';
-import { Select } from 'antd';
+import * as React from 'react';
+import * as Antd from 'antd';
+
+const { Select } = Antd;
 
 export default class SelectMap extends React.PureComponent {
   renderOption = () => {

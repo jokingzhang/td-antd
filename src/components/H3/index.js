@@ -1,6 +1,8 @@
-import React from 'react';
-import { Button } from 'antd';
+import * as React from 'react';
+import * as Antd from 'antd';
 import './index.less';
+
+const { Button } = Antd;
 
 function H3({ className, children, ...props }) {
   const {

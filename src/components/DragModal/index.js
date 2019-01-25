@@ -5,9 +5,11 @@
 * title 部分可进行拖拽
 * */
 
-import React from 'react';
-import { Modal } from 'antd';
+import * as React from 'react';
+import * as Antd from 'antd';
 import './index.less';
+
+const Modal = Antd.Modal;
 
 const genNonDuplicateID = (length) => {
   return Number(Math.random().toString().substr(3, length) + Date.now()).toString(36);

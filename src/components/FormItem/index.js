@@ -1,5 +1,7 @@
-import React from 'react';
-import { Form, Input } from 'antd';
+import * as React from 'react';
+import * as Antd from 'antd';
+
+const { Form, Input } = Antd;
 
 class FormItem extends React.PureComponent {
   render() {

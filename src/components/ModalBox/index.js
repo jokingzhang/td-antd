@@ -1,6 +1,7 @@
-import React from 'react';
-import { Modal } from 'antd';
-import './index.less';
+import * as React from 'react';
+import * as Antd from 'antd';
+
+const Modal = Antd.Modal;
 
 export default class ModalBox extends React.Component {
   state = {
@@ -61,7 +62,6 @@ export default class ModalBox extends React.Component {
     } = this.props;
     return (
       <Modal
-        className="td-modal"
         width={width}
         visible={visible}
         onOk={this.ok}
