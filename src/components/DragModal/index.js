@@ -25,6 +25,9 @@ class DragModal extends React.PureComponent {
     this.dragging = false; // 是否拖拽的开关
     this.tLeft = 0; // ---|
     this.tTop = 0; //  ------> 坐标轴
+    this.state = {
+      visible: false,
+    };
   }
 
   componentDidMount() {
@@ -97,13 +100,57 @@ class DragModal extends React.PureComponent {
     }
   };
 
+  show = (cb) => {
+    // 显示模态框
+    this.setState({
+      visible: true,
+    }, () => {
+      // eslint-disable-next-line
+      cb && cb();
+    });
+  };
+
+  hide = (cb) => {
+    // 模态框消失
+    this.setState({
+      visible: false,
+    }, () => {
+      // eslint-disable-next-line
+      cb && cb();
+    });
+  };
+
+  ok = () => {
+    // 点击确定按钮
+    const { handleOk } = this.props;
+    if (handleOk) {
+      handleOk();
+      return;
+    }
+    this.hide();
+  };
+
+  cancel = () => {
+    // 点击取消按钮
+    const { handleCancel } = this.props;
+    if (handleCancel) {
+      handleCancel();
+      return;
+    }
+    this.hide();
+  };
+
   render() {
+    const { visible } = this.state;
     const { children, title = 'Drag-Modal', wrapClassName = '' } = this.props;
 
     return (
       <Modal
         {...this.props}
         mask={false}
+        visible={visible}
+        onOk={this.ok}
+        onCancel={this.cancel}
         wrapClassName={`td-drag-modal d_${this.id} ${wrapClassName}`}
         title={
           <div

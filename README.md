@@ -5,7 +5,7 @@
 
 ### API
 
-- [portal](https://github.com/wb-chenlong/td-antd/blob/master/API.md)
+- [portal](https://github.com/long-zhuge/td-antd/blob/master/API.md)
 
 ### Install
 
@@ -23,7 +23,7 @@ import 'td-antd/dist/index.css'; // 主文件引入一次即可
 ### Development
 
 ```
-$ git clone https://github.com/wb-chenlong/td-antd.git
+$ git clone https://github.com/long-zhuge/td-antd.git
 $ npm i
 $ npm run dev
 $ sudo npm link
@@ -33,7 +33,7 @@ $ npm link td-antd
 
 // Usage
 import { H3, FormItem } from 'td-antd';
-import 'td-antd/dist/index.less'; // 请确保支持 less
+import 'td-antd/dist/index.less'; // 请确保支持 less，如不支持 less，则可直接引用 'td-antd/dist/index.css'。
 
 // 卸载测试组件
 npm unlink td-antd

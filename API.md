@@ -280,6 +280,13 @@ export default Demo;
 
 > 支持所有原 Modal 中的 API
 
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|show(callback)|浮层显示的函数，this.refs 进行调用|function||
+|hide(callback)|浮层隐藏的函数|function||
+|handleOk|点击确认按钮的回调函数|function||
+|handleCancel|点击取消按钮的回调函数|function||
+
 ### demo
 
 ```
@@ -288,16 +295,16 @@ import { DragModal } from 'td-antd';
 import 'td-antd/dist/index.less';
 
 export default class Demo extends React.PureComponent {
-  state = {
-    visible: false,
-  };
+  componentDidMount() {
+    this.modalRef.show(() => {
+    	console.log('show');
+    });
+  }
 
   render() {
-    const { visible } = this.state;
-
     return (
       <DragModal
-        visible={visible}
+        ref={(r) => {this.modalRef = r}}
         onOk={() => {
           this.setState({ visible: false });
         }}
