@@ -406,3 +406,27 @@ import { FormItem, SearchForm } from 'td-antd';
   )}
 </SearchForm>
 ```
+
+## matchMedia
+
+> 监控浏览器宽度大小，并返回 isMobile 属性传入到容器组件中。基于 window.matchMedia 封装的 react 高阶组件。
+
+### demo
+
+```
+import React from 'react';
+import { matchMedia } from 'td-antd';
+
+@matchMedia('600')
+class Demo extends React.PureComponent {
+  render() {
+  	 console.log(this.props.isMobile);
+ 
+    return (
+      <div>test</div>
+    );
+  }
+}
+
+export default Demo;
+```
