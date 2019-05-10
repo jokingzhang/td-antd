@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Antd from 'antd';
+import NumberInputWithUnit from '../NumberInputWithUnit';
 
 const { Form, Input } = Antd;
 
@@ -23,7 +24,7 @@ class FormItem extends React.PureComponent {
       inputProps = {},
       valuePropName = 'value',
       itemType = 'default',
-      unit = '',
+      unit,
       isNegative = false,
       isInteger = false,
 
@@ -79,7 +80,7 @@ class FormItem extends React.PureComponent {
           valuePropName,
         })(
           (itemType === 'number') ?
-            <Input {...inputProps} type="number" addonAfter={unit} /> :
+            <NumberInputWithUnit unit={unit} {...inputProps} /> :
             (children || <Input {...inputProps} />)
         )}
       </Form.Item>
