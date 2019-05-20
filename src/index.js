@@ -10,3 +10,4 @@ export { default as ErrorBoundary } from './components/ErrorBoundary';
 export { default as CollapsePanel } from './components/CollapsePanel';
 export { default as FormItemSelect } from './components/FormItemSelect';
 export { default as matchMedia } from './components/matchMedia';
+export { default as InputNumberWithUnit } from './components/InputNumberWithUnit';

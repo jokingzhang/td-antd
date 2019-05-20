@@ -4,7 +4,7 @@ import './index.less';
 
 const { InputNumber } = Antd;
 
-export default class NumberInput extends React.PureComponent {
+export default class InputNumberWithUnit extends React.PureComponent {
   render() {
     const { unit } = this.props;
 
