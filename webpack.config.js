@@ -19,7 +19,14 @@ const plugins = [
 
 isAnalyze && plugins.push(new BundleAnalyzerPlugin());
 // 将 index.less 复制到 dist目录下，以供在本地测试时使用
-isCopy && plugins.push(new CopyWebpackPlugin([{ from: 'src/index.less' }]));
+isCopy && plugins.push(new CopyWebpackPlugin([
+  { from: 'src/index.less' },
+  // {
+  //   from: path.resolve(__dirname, 'src/components'),
+  //   to: path.resolve(__dirname, 'lib'),
+  //   ignore: ['.*'],
+  // },
+]));
 
 const config = {
   target: 'node',

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import * as Antd from 'antd';
-
-const Modal = Antd.Modal;
+import Modal from 'antd/es/modal';
+import 'antd/es/modal/style';
 
 export default class ModalBox extends React.Component {
   state = {
@@ -52,14 +51,9 @@ export default class ModalBox extends React.Component {
     const { visible } = this.state;
     const {
       width = 500,
-      // title = '标题',  // 标题添加
-      // maskClosable = false,  // 点击蒙层是否允许关闭
-      // closable = true, // 右上角取消按钮
-      // okText = '确定', // 确定按钮的文案
-      // cancelText = '取消', // 取消按钮文案
-      // confirmLoading = false, // 确定按钮 loading
       children,
     } = this.props;
+
     return (
       <Modal
         width={width}

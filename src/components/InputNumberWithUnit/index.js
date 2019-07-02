@@ -1,8 +1,7 @@
 import * as React from 'react';
-import * as Antd from 'antd';
+import InputNumber from 'antd/es/input-number';
+import 'antd/es/input-number/style';
 import './index.less';
-
-const { InputNumber } = Antd;
 
 export default class InputNumberWithUnit extends React.PureComponent {
   render() {
@@ -12,7 +11,7 @@ export default class InputNumberWithUnit extends React.PureComponent {
       return (
         <div className="td-number-input-wrapper">
           <InputNumber {...this.props} />
-          <span className="td-number-input-unit">{unit}</span>
+          <div className="td-number-input-unit">{unit}</div>
         </div>
       );
     }
