@@ -16,7 +16,7 @@
 ### demo
 
 ```
-<H3
+<Title
   title="标题"
   leftExtra={<div>左侧额外展示区域</div>}
 >
