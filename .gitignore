@@ -28,3 +28,4 @@ jspm_packages
 jsconfig.json
 .prettierrc
 dist
+lib

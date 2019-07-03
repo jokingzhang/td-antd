@@ -1,15 +1,16 @@
 {
   "name": "td-antd",
-  "version": "1.1.1",
+  "version": "1.1.1-beta1",
   "description": "",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "dist",
+    "lib"
   ],
   "scripts": {
     "test": "jest ./test/*.test.js",
-    "build": "webpack --mode production",
-    "dev": "COPY=true npm run build",
+    "build": "rm -rf lib && webpack --mode production",
+    "dev": "MODE=DEV npm run build",
     "analyze": "ANALYZE=true webpack"
   },
   "keywords": [

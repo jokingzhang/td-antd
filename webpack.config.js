@@ -7,7 +7,7 @@ const nodeExternals = require('webpack-node-externals');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isAnalyze = process.env.ANALYZE === 'true';
-const isCopy = process.env.COPY === 'true';
+const mode = process.env.MODE === 'DEV';
 const plugins = [
   new CleanWebpackPlugin('./dist'),
   new MiniCssExtractPlugin({
@@ -18,15 +18,22 @@ const plugins = [
 ];
 
 isAnalyze && plugins.push(new BundleAnalyzerPlugin());
-// 将 index.less 复制到 dist目录下，以供在本地测试时使用
-isCopy && plugins.push(new CopyWebpackPlugin([
-  { from: 'src/index.less' },
-  // {
-  //   from: path.resolve(__dirname, 'src/components'),
-  //   to: path.resolve(__dirname, 'lib'),
-  //   ignore: ['.*'],
-  // },
-]));
+
+if (mode) {
+  // dev 环境打包，将 index.less 复制到 dist目录下，以供在本地测试时使用
+  plugins.push(new CopyWebpackPlugin([
+    { from: 'src/index.less' },
+  ]));
+} else {
+  // prod 打包
+  plugins.push(new CopyWebpackPlugin([
+    {
+      from: path.resolve(__dirname, 'src/components'),
+      to: path.resolve(__dirname, 'lib'),
+      ignore: ['.*'],
+    },
+  ]));
+}
 
 const config = {
   target: 'node',
