@@ -5,13 +5,13 @@ import './index.less';
 
 export default class InputNumberWithUnit extends React.PureComponent {
   render() {
-    const { unit } = this.props;
+    const { unit, positionTop = 4 } = this.props;
 
     if (unit) {
       return (
         <div className="td-number-input-wrapper">
           <InputNumber {...this.props} />
-          <div className="td-number-input-unit">{unit}</div>
+          <span className="td-number-input-unit" style={{ top: positionTop }}>{unit}</span>
         </div>
       );
     }

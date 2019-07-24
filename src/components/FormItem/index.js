@@ -26,6 +26,7 @@ function FormItem({ className = '', children, ...props }) {
     isNegative = false,
     isInteger = false,
     message = '必填项',
+    positionTop,
   } = props;
 
   if (!form) {
@@ -75,7 +76,7 @@ function FormItem({ className = '', children, ...props }) {
         valuePropName,
       })(
         (itemType === 'number') ?
-          <InputNumberWithUnit unit={unit} {...inputProps} /> :
+          <InputNumberWithUnit unit={unit} {...inputProps} positionTop={positionTop} /> :
           (children || <Input {...inputProps} />)
       )}
     </Form.Item>

@@ -27,6 +27,7 @@
 |unit|显示单位|string|' '|
 |isNegative|是否为负数，默认不可以| boolean |false|
 |isInteger|是否为整数，默认不是|boolean |false|
+|positionTop|定位，可能会出现上下移位的问题|number|4|
 
 ### demo
 
