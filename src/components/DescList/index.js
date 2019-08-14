@@ -1,5 +1,3 @@
-// todo: 本地 import 测试未通过
-
 import * as React from 'react';
 import Descriptions from 'antd/es/descriptions';
 import 'antd/es/descriptions/style';

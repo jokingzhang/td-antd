@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Input from 'antd/es/input';
 import Form from 'antd/es/form';
 import 'antd/es/input/style';
