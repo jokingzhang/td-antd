@@ -4,7 +4,7 @@ import 'antd/es/descriptions/style';
 
 export default class DescList extends React.PureComponent {
   static defaultProps = {
-    dataSource: [],
+    dataSource: {},
     size: 'small',
     column: 4,
     columns: [],
