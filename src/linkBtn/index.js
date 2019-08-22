@@ -1,12 +1,12 @@
 import * as React from 'react';
-import './index.less';
+import styles from './index.module.less';
 
 function LinkBtn({ className = '', children, ...props }) {
   return (
     <button
       type="button"
       {...props}
-      className={`td-linkBtn ${className}`}
+      className={`${styles.normal} ${className}`}
     >
       {children}
     </button>

@@ -8,12 +8,10 @@
     "es"
   ],
   "scripts": {
-    "test": "jest ./test/*.test.js",
-    "build": "webpack --mode production",
-    "dist": "rm -rf dist && npm run build",
-    "es": "rm -rf es && TYPE=es npm run build",
-    "dev": "MODE=DEV npm run dist",
-    "analyze": "ANALYZE=true webpack"
+    "doc:dev": "umi-lib doc dev",
+    "doc:build": "umi-lib doc build",
+    "es": "umi-lib build --esm babel",
+    "build": "umi-lib build"
   },
   "keywords": [
     "react",
@@ -32,53 +30,9 @@
     "antd": ">=3.21.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.2.2",
-    "@babel/plugin-proposal-class-properties": "^7.4.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
-    "@babel/preset-env": "^7.3.1",
-    "@babel/preset-react": "^7.0.0",
-    "antd": "3.21.0",
-    "babel-eslint": "10.0.1",
-    "babel-loader": "^8.0.5",
-    "babel-plugin-import": "^1.12.0",
-    "clean-webpack-plugin": "^1.0.0",
-    "copy-webpack-plugin": "^4.6.0",
-    "css-loader": "0.28.11",
-    "eslint": "5.6.0",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-config-prettier": "3.3.0",
-    "eslint-plugin-import": "2.14.0",
-    "eslint-plugin-jsx-a11y": "6.1.1",
-    "eslint-plugin-react": "7.11.1",
-    "jest": "^24.8.0",
-    "less": "3.0.4",
-    "less-loader": "4.1.0",
-    "mini-css-extract-plugin": "0.4.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss-loader": "2.1.5",
-    "react": "16.2.0",
-    "react-dom": "16.2.0",
-    "react-transform-hmr": "1.0.4",
-    "style-loader": "0.21.0",
-    "stylelint": "9.5.0",
-    "stylelint-config-standard": "18.2.0",
-    "webpack": "4.8.3",
-    "webpack-bundle-analyzer": "^3.0.3",
-    "webpack-cli": "2.1.3",
-    "webpack-node-externals": "^1.7.2"
+    "umi-library": "^1.6.0"
   },
-  "jest": {
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "json"
-    ]
-  },
-  "sideEffects": [
-    "dist/*",
-    "es/**/style/*",
-    "*.less"
-  ]
+  "dependencies": {
+    "antd": "^3.22.0"
+  }
 }

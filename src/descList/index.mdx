@@ -1,0 +1,19 @@
+---
+name: DescList
+route: /descList
+---
+
+import DescList from './index';
+
+## DescList
+
+<DescList
+  bordered
+  columns={[
+    {
+      title: '名字',
+      dataIndex: 'name',
+    },
+  ]}
+  dataSource={{ name: '陈龙' }}
+/>
