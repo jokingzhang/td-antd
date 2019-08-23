@@ -3,7 +3,7 @@
     "title": "Td Antd",
     "description": "My awesome app using docz",
     "menu": [],
-    "version": "1.1.2",
+    "version": "1.1.3",
     "repository": false,
     "native": false,
     "codeSandbox": true,
@@ -19,27 +19,7 @@
       {}
     ]
   },
-  "props": [
-    {
-      "key": "src/selectMap/index.js",
-      "value": [
-        {
-          "description": "",
-          "displayName": "SelectMap",
-          "methods": [
-            {
-              "name": "renderOption",
-              "docblock": null,
-              "modifiers": [],
-              "params": [],
-              "returns": null
-            }
-          ],
-          "actualName": "SelectMap"
-        }
-      ]
-    }
-  ],
+  "props": [],
   "entries": [
     {
       "key": "src/descList/index.mdx",

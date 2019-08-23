@@ -1,0 +1,27 @@
+language: node_js # 使用 nodejs 作为构建语言
+
+node_js:
+  - "8" ## 版本为 8 以上
+
+install:
+  - npm install # 安装依赖
+
+script:
+  - npm run doc:build # 依赖安装完成后，进行打包构建
+
+# 分支白名单
+branches:
+  only:
+    - master # 只对 master 分支进行构建
+
+# GitHub Pages 部署
+deploy:
+  provider: pages
+  skip_cleanup: true
+  # 令牌秘钥，在主页面用户的 Setting 中创建
+  github_token: $GITHUB_TOKEN
+  # 将 dist 目录下的内容推送到默认的 gh-pages 分支上
+  local_dir: .docz/dist
+  target_branch: gh-pages
+  on:
+    branch: master

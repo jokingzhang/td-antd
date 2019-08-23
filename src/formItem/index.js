@@ -64,7 +64,7 @@ export default function FormItem({ className, children, ...props }) {
 
   return (
     <Form.Item
-      className={classNames(className)}
+      className={className}
       {...formItemLayout}
       {...props}
     >
