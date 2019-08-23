@@ -1,0 +1,56 @@
+---
+name: DragModal
+route: /dragModal
+---
+
+import { Playground, Props } from 'docz';
+import DragModal from './index';
+
+## DragModal
+
+基于 Modal 的二次封装，可拖拽的浮层
+
+<Playground>
+  {class Example extends React.Component {
+    constructor(props) {
+      this.state = {
+        visible: false,
+        visible2: false,
+      };
+    }
+
+    show() {
+      this.setState({ visible: true });
+    }
+
+    onCancel() {
+      this.setState({ visible: false });
+    }
+
+    show2() {
+      this.setState({ visible2: true });
+    }
+
+    onCancel2() {
+      this.setState({ visible2: false });
+    }
+
+    render () {
+      const { visible, visible2 } = this.state;
+
+      return (
+        <React.Fragment>
+          <button onClick={() => this.show()}>Show Modal-1</button>
+          <br/>
+          <button onClick={() => this.show2()}>Show Modal-2</button>
+          <DragModal title="Modal-1" visible={visible} onCancel={() => this.onCancel()} />
+          <DragModal title="Modal-2" visible={visible2} onCancel={() => this.onCancel2()} />
+        </React.Fragment>
+      )
+    }
+  }}
+</Playground>
+
+## API
+
+支持原 [Modal](https://ant-design.gitee.io/components/modal-cn/) API

@@ -3,9 +3,8 @@ import Input from 'antd/es/input';
 import Form from 'antd/es/form';
 import 'antd/es/input/style';
 import 'antd/es/form/style';
-import InputNumberWithUnit from '../InputNumberWithUnit';
 
-function FormItem({ className = '', children, ...props }) {
+export default function FormItem({ className, children, ...props }) {
   const { cols = [] } = props;
   const {
     formItemLayout = {
@@ -26,7 +25,6 @@ function FormItem({ className = '', children, ...props }) {
     isNegative = false,
     isInteger = false,
     message = '必填项',
-    positionTop,
   } = props;
 
   if (!form) {
@@ -66,7 +64,7 @@ function FormItem({ className = '', children, ...props }) {
 
   return (
     <Form.Item
-      className={className}
+      className={classNames(className)}
       {...formItemLayout}
       {...props}
     >
@@ -76,11 +74,9 @@ function FormItem({ className = '', children, ...props }) {
         valuePropName,
       })(
         (itemType === 'number') ?
-          <InputNumberWithUnit unit={unit} {...inputProps} positionTop={positionTop} /> :
+          <Input type="number" suffix={unit} /> :
           (children || <Input {...inputProps} />)
       )}
     </Form.Item>
   );
 }
-
-export default FormItem;

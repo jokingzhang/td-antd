@@ -1,21 +1,45 @@
 import * as React from 'react';
 import InputNumber from 'antd/es/input-number';
 import 'antd/es/input-number/style';
-import style from './index.module.less';
 
-export default class InputNumberWithUnit extends React.PureComponent {
+const symbolReg = {
+  '¥': /\¥\s?|(,*)/g,
+  '$': /\$\s?|(,*)/g,
+  'NT': /\NT\s?|(,*)/g,
+  'zł': /\zł\s?|(,*)/g,
+  '€': /\€\s?|(,*)/g,
+};
+
+export default class InputNumberWithUnit extends React.Component {
+  static defaultProps = {
+    unit: '',
+  };
+
+  isMoneySymbol = () => {
+    const { unit } = this.props;
+    const symbol = Object.keys(symbolReg);
+    return symbol.includes(unit);
+  };
+
   render() {
-    const { unit, positionTop = 0 } = this.props;
+    const { unit } = this.props;
 
-    if (unit) {
+    if (this.isMoneySymbol()) {
       return (
-        <div className={style['td-number-input-wrapper']}>
-          <InputNumber {...this.props} />
-          <span className={style['td-number-input-unit']} style={{ top: positionTop }}>{unit}</span>
-        </div>
+        <InputNumber
+          formatter={value => `${unit} ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+          parser={value => value.replace(symbolReg[unit], '')}
+          {...this.props}
+        />
       );
     }
 
-    return <InputNumber {...this.props} />;
+    return (
+      <InputNumber
+        formatter={value => `${value}${unit}`}
+        parser={value => value.replace(unit, '')}
+        {...this.props}
+      />
+    );
   }
 }

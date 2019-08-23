@@ -2,7 +2,7 @@ import * as React from 'react';
 import Select from 'antd/es/select';
 import 'antd/es/select/style';
 
-export default class SelectMap extends React.PureComponent {
+export default class SelectMap extends React.Component {
   renderOption = () => {
     const { data = [], fields = [] } = this.props;
 
@@ -17,13 +17,11 @@ export default class SelectMap extends React.PureComponent {
   };
 
   render() {
-    const { style = { width: '100%' } } = this.props;
-
     return (
       <Select
         showSearch
         allowClear
-        style={style}
+        style={{ width: '100%' }}
         {...this.props}
       >
         {this.renderOption()}

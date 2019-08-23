@@ -1,0 +1,28 @@
+---
+name: SelectMap
+route: /selectMap
+---
+
+import { Playground, Props } from 'docz';
+import SelectMap from './index';
+
+## SelectMap
+
+基于 Select 的二次封装
+
+<Playground>
+  <SelectMap data={{ key1: 'key1', key2: 'key2' }} />
+  <SelectMap data={['key1', 'key2']} />
+  <SelectMap data={[{ name: 'andy', value: 1 }, { name: 'sam', value: 2 }]} fields={['value', 'name']} />
+</Playground>
+
+## API
+
+支持原 [Select](https://ant-design.gitee.io/components/select-cn/) API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|data|渲染所需要的数据源|object / array|-|
+|fields|当 data 为数组时，且数组成员为对象时，需要申明渲染字段|[string, string]|-|
+
+> 注意：默认宽度是 100%

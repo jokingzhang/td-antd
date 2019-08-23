@@ -21,13 +21,21 @@
   },
   "props": [
     {
-      "key": "src/inputNumberWithUnit/index.js",
+      "key": "src/selectMap/index.js",
       "value": [
         {
           "description": "",
-          "displayName": "InputNumberWithUnit",
-          "methods": [],
-          "actualName": "InputNumberWithUnit"
+          "displayName": "SelectMap",
+          "methods": [
+            {
+              "name": "renderOption",
+              "docblock": null,
+              "modifiers": [],
+              "params": [],
+              "returns": null
+            }
+          ],
+          "actualName": "SelectMap"
         }
       ]
     }
@@ -63,6 +71,30 @@
             "slug": "columns",
             "depth": 3,
             "value": "columns"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/dragModal/index.mdx",
+      "value": {
+        "name": "DragModal",
+        "route": "/dragModal",
+        "id": "3304d36f8e0dd7abff6f581ea6871068",
+        "filepath": "src/dragModal/index.mdx",
+        "link": "https://github.com/wb-chenlong/td-antd/edit/master/src/dragModal/index.mdx",
+        "slug": "src-drag-modal-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "dragmodal",
+            "depth": 2,
+            "value": "DragModal"
+          },
+          {
+            "slug": "api",
+            "depth": 2,
+            "value": "API"
           }
         ]
       }
@@ -154,6 +186,30 @@
             "slug": "modalbox",
             "depth": 2,
             "value": "ModalBox"
+          },
+          {
+            "slug": "api",
+            "depth": 2,
+            "value": "API"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/selectMap/index.mdx",
+      "value": {
+        "name": "SelectMap",
+        "route": "/selectMap",
+        "id": "589df43d9424d0a6f7b4a1bac08e1639",
+        "filepath": "src/selectMap/index.mdx",
+        "link": "https://github.com/wb-chenlong/td-antd/edit/master/src/selectMap/index.mdx",
+        "slug": "src-select-map-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "selectmap",
+            "depth": 2,
+            "value": "SelectMap"
           },
           {
             "slug": "api",
