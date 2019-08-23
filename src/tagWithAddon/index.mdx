@@ -1,0 +1,29 @@
+---
+name: TagWithAddon
+route: /tagWithAddon
+---
+
+import { Playground, Props } from 'docz';
+import TagWithAddon from './index';
+
+## TagWithAddon
+
+基于 Tag 的二次封装，可在标签的前面和后面添加自定义元素。
+
+<Playground>
+  <TagWithAddon
+    addonBefore="前面的元素"
+    addonAfter="后面的元素"
+  >
+    标签名
+  </TagWithAddon>
+</Playground>
+
+## API
+
+支持原 [Tag](https://ant-design.gitee.io/components/tag-cn/) API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|addonBefore|标签的前置内容|string/ReactNode|-|
+|addonAfter|标签的后置内容|string/ReactNode|-|

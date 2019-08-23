@@ -3,7 +3,7 @@
     "title": "Td Antd",
     "description": "My awesome app using docz",
     "menu": [],
-    "version": "1.1.1-beta3",
+    "version": "1.1.2",
     "repository": false,
     "native": false,
     "codeSandbox": true,
@@ -19,7 +19,19 @@
       {}
     ]
   },
-  "props": [],
+  "props": [
+    {
+      "key": "src/inputNumberWithUnit/index.js",
+      "value": [
+        {
+          "description": "",
+          "displayName": "InputNumberWithUnit",
+          "methods": [],
+          "actualName": "InputNumberWithUnit"
+        }
+      ]
+    }
+  ],
   "entries": [
     {
       "key": "src/descList/index.mdx",
@@ -36,6 +48,69 @@
             "slug": "desclist",
             "depth": 2,
             "value": "DescList"
+          },
+          {
+            "slug": "api",
+            "depth": 2,
+            "value": "API"
+          },
+          {
+            "slug": "desclist-1",
+            "depth": 3,
+            "value": "DescList"
+          },
+          {
+            "slug": "columns",
+            "depth": 3,
+            "value": "columns"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/formItem/index.mdx",
+      "value": {
+        "name": "FormItem",
+        "route": "/formItem",
+        "id": "81b03cb0d7c39f5569a28947df6b5c26",
+        "filepath": "src/formItem/index.mdx",
+        "link": "https://github.com/wb-chenlong/td-antd/edit/master/src/formItem/index.mdx",
+        "slug": "src-form-item-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "formitem",
+            "depth": 2,
+            "value": "FormItem"
+          },
+          {
+            "slug": "api",
+            "depth": 2,
+            "value": "API"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/inputNumberWithUnit/index.mdx",
+      "value": {
+        "name": "InputNumberWithUnit",
+        "route": "/inputNumberWithUnit",
+        "id": "86dd0dbba60295be9b3d5c2a708b41ce",
+        "filepath": "src/inputNumberWithUnit/index.mdx",
+        "link": "https://github.com/wb-chenlong/td-antd/edit/master/src/inputNumberWithUnit/index.mdx",
+        "slug": "src-input-number-with-unit-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "inputnumberwithunit",
+            "depth": 2,
+            "value": "InputNumberWithUnit"
+          },
+          {
+            "slug": "api",
+            "depth": 2,
+            "value": "API"
           }
         ]
       }
@@ -53,13 +128,61 @@
         "headings": [
           {
             "slug": "linkbtn",
-            "depth": 1,
+            "depth": 2,
             "value": "LinkBtn"
           },
           {
-            "slug": "normal-linkbtn",
+            "slug": "api",
             "depth": 2,
-            "value": "Normal LinkBtn"
+            "value": "API"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/modalBox/index.mdx",
+      "value": {
+        "name": "ModalBox",
+        "route": "/modalBox",
+        "id": "72e798953ee4554186473dc6b554bdb3",
+        "filepath": "src/modalBox/index.mdx",
+        "link": "https://github.com/wb-chenlong/td-antd/edit/master/src/modalBox/index.mdx",
+        "slug": "src-modal-box-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "modalbox",
+            "depth": 2,
+            "value": "ModalBox"
+          },
+          {
+            "slug": "api",
+            "depth": 2,
+            "value": "API"
+          }
+        ]
+      }
+    },
+    {
+      "key": "src/tagWithAddon/index.mdx",
+      "value": {
+        "name": "TagWithAddon",
+        "route": "/tagWithAddon",
+        "id": "b1546f6aeb9735e4fc07c5d4a5a95ab6",
+        "filepath": "src/tagWithAddon/index.mdx",
+        "link": "https://github.com/wb-chenlong/td-antd/edit/master/src/tagWithAddon/index.mdx",
+        "slug": "src-tag-with-addon-index",
+        "menu": "",
+        "headings": [
+          {
+            "slug": "tagwithaddon",
+            "depth": 2,
+            "value": "TagWithAddon"
+          },
+          {
+            "slug": "api",
+            "depth": 2,
+            "value": "API"
           }
         ]
       }

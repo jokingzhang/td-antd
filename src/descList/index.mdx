@@ -3,17 +3,52 @@ name: DescList
 route: /descList
 ---
 
+import { Playground, Props } from 'docz';
 import DescList from './index';
 
 ## DescList
 
-<DescList
-  bordered
-  columns={[
-    {
-      title: '名字',
-      dataIndex: 'name',
-    },
-  ]}
-  dataSource={{ name: '陈龙' }}
-/>
+基于 Descriptions 的二次封装，通常用于详情信息的展示
+
+<Playground>
+  <DescList
+    bordered
+    columns={[
+      {
+        title: '名字',
+        dataIndex: 'name',
+      }, {
+        title: '年龄',
+        dataIndex: 'age',
+      }, {
+        title: '地址',
+        dataIndex: 'address',
+      }, {
+        title: '电话',
+        render: record => record.phone,
+      }
+    ]}
+    dataSource={{ name: 'andy', age: 18, address: null, phone: '138xxxxxxxx' }}
+  />
+</Playground>
+
+## API
+
+### DescList
+
+支持原 [Descriptions](https://ant-design.gitee.io/components/descriptions-cn/) API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|dataSource|数据源|object|{}|
+|columns|列描述数据对象|array|[]|
+|defaultValue|默认展示的值|string|'--'|
+
+### columns
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|title|label展示的值|string/ReactNode|-|
+|dataIndex|数据在数据项中对应的 key，支持嵌套写法"key.key.key"|string|-|
+|unVisible|是否不显示|bool|false|
+|render|生成复杂数据的渲染函数|Function(render) {}|-|

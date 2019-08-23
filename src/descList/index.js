@@ -2,7 +2,7 @@ import * as React from 'react';
 import Descriptions from 'antd/es/descriptions';
 import 'antd/es/descriptions/style';
 
-export default class DescList extends React.PureComponent {
+export default class DescList extends React.Component {
   static defaultProps = {
     dataSource: {},
     size: 'small',
@@ -17,6 +17,20 @@ export default class DescList extends React.PureComponent {
       .reduce((o, k) => (o || {})[k], object) || defaultValue;
   };
 
+  // 需要进行 react 组件的判断
+  renderValue = (value) => {
+    if (React.isValidElement(value)) {
+      return value;
+    } else {
+      if (value && value !== null && value !== '') {
+        return value;
+      }
+
+      return this.props.defaultValue;
+    }
+  };
+
+  // 子项的渲染
   renderItem = () => {
     const { dataSource, columns, defaultValue } = this.props;
 
@@ -30,8 +44,9 @@ export default class DescList extends React.PureComponent {
       const value = render ? render(dataSource) : this.deepGet(dataSource, dataIndex, defaultValue);
 
       return (
+        // eslint-disable-next-line
         <Descriptions.Item label={title} key={index}>
-          {value || defaultValue}
+          {this.renderValue(value)}
         </Descriptions.Item>
       )
     })

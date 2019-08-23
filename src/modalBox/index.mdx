@@ -1,0 +1,44 @@
+---
+name: ModalBox
+route: /modalBox
+---
+
+import { Playground, Props } from 'docz';
+import ModalBox from './index';
+
+## ModalBox
+
+基于 Modal 的二次封装，通过 refs 调用组件函数来打开浮层。
+
+<Playground>
+  {class Example extends React.Component {
+    handleClick () {
+      this.modalRef.show();
+    }
+
+    render () {
+      return (
+        <React.Fragment>
+          <button onClick={() => this.handleClick()}>Show Modal</button>
+          <ModalBox
+            title="demo"
+            ref={(r) => {this.modalRef = r}}
+          >
+            content
+          </ModalBox>
+        </React.Fragment>
+      )
+    }
+  }}
+</Playground>
+
+## API
+
+支持原 [Modal](https://ant-design.gitee.io/components/modal-cn/) API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|show(callback)|浮层显示的函数|function||
+|hide(callback)|浮层隐藏的函数|function||
+|handleOk|点击确认按钮的回调函数|function||
+|handleCancel|点击取消按钮的回调函数|function||

@@ -1,0 +1,24 @@
+---
+name: InputNumberWithUnit
+route: /inputNumberWithUnit
+---
+
+import { Playground, Props } from 'docz';
+import InputNumberWithUnit from './index';
+
+## InputNumberWithUnit
+
+基于 InputNumber 的二次封装，实现带单位的数字输入框
+
+<Playground>
+  <InputNumberWithUnit unit="元" />
+</Playground>
+
+## API
+
+支持原 [InputNumber](https://ant-design.gitee.io/components/input-number-cn/) API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|unit|单位|string|无|
+|positionTop|定位使用，可能会出现上下移位的问题|number|0|

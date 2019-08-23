@@ -3,10 +3,21 @@ name: LinkBtn
 route: /linkBtn
 ---
 
+import { Playground, Props } from 'docz';
 import LinkBtn from './index';
 
-# LinkBtn
+## LinkBtn
 
-## Normal LinkBtn
+像 a 标签一样的按钮组件
 
-<LinkBtn>Normal Button</LinkBtn>
+<Playground>
+  <LinkBtn onClick={() => {alert('add')}}>click</LinkBtn>
+  <br/>
+  <LinkBtn disabled>disabled</LinkBtn>
+</Playground>
+
+## API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|className|样式类|string|-|
