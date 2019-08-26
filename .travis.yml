@@ -17,7 +17,7 @@ before_script:
 script:
   - npm run doc:build # 依赖安装完成后，进行打包构建
 
-after_script:
+after_success:
   - cd ./.docz/dist/public/
   - mv 404.html ../404.html
 
