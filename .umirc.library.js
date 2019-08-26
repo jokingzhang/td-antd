@@ -6,5 +6,17 @@ export default {
     globals: {
       react: 'React',
     },
-  }
+  },
+  doc: {
+    // themeConfig: { mode: 'dark' }
+    base: '/td-antd/',
+    // public: '/public',
+    htmlContext: {
+      head: {
+        scripts: [
+          { src: './public/redirect.js' },
+        ],
+      },
+    },
+  },
 }

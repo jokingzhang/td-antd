@@ -12,6 +12,7 @@
   "scripts": {
     "doc:dev": "umi-lib doc dev",
     "doc:build": "umi-lib doc build",
+    "doc:deploy": "umi-lib doc deploy",
     "build": "umi-lib build",
     "lib": "umi-lib build --cjs babel",
     "es": "umi-lib build --esm babel",

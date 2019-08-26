@@ -2,7 +2,7 @@
 
 - 业务开发中沉淀下来的组件，基于 antd 的封装。
 - 请确保在宿主项目中引入了 antd 依赖以及在代码中引入了 antd 样式。
-- [API](https://www.yuque.com/books/share/49234b80-0d74-448d-aee4-eea060cdd8fc)
+- [API](https://long-zhuge.github.io/td-antd/)
 
 ### Install
 
