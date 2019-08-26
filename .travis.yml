@@ -15,7 +15,7 @@ install:
 before_script:
 
 script:
-  - yarn doc:build # 依赖安装完成后，进行打包构建
+  - yarn run doc:build # 依赖安装完成后，进行打包构建
 
 after_success:
   - cd ./.docz/dist/public/
