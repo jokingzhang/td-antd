@@ -5,7 +5,7 @@ import 'antd/es/input-number/style';
 const symbolReg = {
   '¥': /\¥\s?|(,*)/g,
   '$': /\$\s?|(,*)/g,
-  'NT': /\NT\s?|(,*)/g,
+  'NT$': /\NT\s?|(,*)/g,
   'zł': /\zł\s?|(,*)/g,
   '€': /\€\s?|(,*)/g,
 };

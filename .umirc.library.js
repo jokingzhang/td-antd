@@ -8,7 +8,11 @@ export default {
     },
   },
   doc: {
-    // themeConfig: { mode: 'dark' }
+    // repository: false,
+    themeConfig: {
+      // mode: 'dark',
+      showPlaygroundEditor: false
+    },
     base: '/td-antd/',
     // public: '/public',
     htmlContext: {

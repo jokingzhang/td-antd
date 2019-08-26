@@ -3,7 +3,7 @@ name: SelectMap
 route: /selectMap
 ---
 
-import { Playground, Props } from 'docz';
+import { Playground } from 'docz';
 import SelectMap from './index';
 
 ## SelectMap
@@ -11,9 +11,9 @@ import SelectMap from './index';
 基于 Select 的二次封装
 
 <Playground>
-  <SelectMap data={{ key1: 'key1', key2: 'key2' }} />
-  <SelectMap data={['key1', 'key2']} />
-  <SelectMap data={[{ name: 'andy', value: 1 }, { name: 'sam', value: 2 }]} fields={['value', 'name']} />
+  <SelectMap data={{ key1: 'Jack', key2: 'Lucy' }} />
+  <SelectMap data={['Jack', 'Lucy']} />
+  <SelectMap data={[{ name: 'Jack', age: 18 }, { name: 'Lucy', age: 20 }]} fields={['age', 'name']} />
 </Playground>
 
 ## API

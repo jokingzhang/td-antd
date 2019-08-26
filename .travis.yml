@@ -10,12 +10,12 @@ cache:
 before_install:
 
 install:
-  - npm install # 安装依赖
+  - yarn install # 安装依赖
 
 before_script:
 
 script:
-  - npm run doc:build # 依赖安装完成后，进行打包构建
+  - yarn doc:build # 依赖安装完成后，进行打包构建
 
 after_success:
   - cd ./.docz/dist/public/

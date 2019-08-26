@@ -3,7 +3,7 @@ name: InputNumberWithUnit
 route: /inputNumberWithUnit
 ---
 
-import { Playground, Props } from 'docz';
+import { Playground } from 'docz';
 import InputNumberWithUnit from './index';
 
 ## InputNumberWithUnit
@@ -11,7 +11,9 @@ import InputNumberWithUnit from './index';
 基于 InputNumber 的二次封装，实现带单位的数字输入框
 
 <Playground>
-  <InputNumberWithUnit unit="元" />
+  <InputNumberWithUnit defaultValue={1000} unit="元" />
+  <br />
+  <InputNumberWithUnit defaultValue={1000} unit="$" />
 </Playground>
 
 ## API
@@ -23,3 +25,13 @@ import InputNumberWithUnit from './index';
 |unit|单位|string|无|
 
 > 注意：特定的货币符号会被前置，且金额在展示上会进行千位符格式化，不影响获取的值。
+
+## 支持的货币符号
+
+```
+¥：人民币/日元
+$：美元
+NT$：新台币
+zł：波兰兹罗提
+€：欧元
+```
