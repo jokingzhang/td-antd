@@ -1,0 +1,33 @@
+---
+name: Title
+route: /title
+---
+
+import { Playground, Props } from 'docz';
+import Title from './index';
+
+## Title
+
+带标题的组件，一般用于展示多个区域性的内容。
+
+<Playground>
+  <Title
+    title="标题"
+    btnText="新增"
+    rightExtra="右边展示信息"
+  >
+    这里是 children 的内容
+  </Title>
+</Playground>
+
+## API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|wrapClassName|外层容器类名|string|-|
+|className|内容区域类名|string|-|
+|title|标题|string|-|
+|btnText|按钮文案|string|-|
+|btnProps|按钮 [Button](https://ant-design.gitee.io/components/button-cn/) 的属性|object||
+|line|分隔线|bool|true|
+|rightExtra|头部右边额外区域|string/reactNode|-|

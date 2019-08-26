@@ -6,3 +6,4 @@ export { default as SelectMap } from './selectMap';
 export { default as DescList } from './descList';
 export { default as TagWithAddon } from './tagWithAddon';
 export { default as DragModal } from './dragModal';
+export { default as Title } from './title';

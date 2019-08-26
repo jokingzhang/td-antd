@@ -13,8 +13,7 @@ npm install --save td-antd
 ### Usage
 
 ```
-import { H3, FormItem } from 'td-antd';
-import 'td-antd/dist/index.css'; // 主文件引入一次即可
+import { Title, FormItem } from 'td-antd';
 ```
 
 ### Development
@@ -22,15 +21,17 @@ import 'td-antd/dist/index.css'; // 主文件引入一次即可
 ```
 $ git clone https://github.com/long-zhuge/td-antd.git
 $ npm i
-$ npm run dev
+$ npm run build:all
 $ sudo npm link
 
 // 宿主项目中
 $ npm link td-antd
 
 // Usage
-import { H3, FormItem } from 'td-antd';
-import 'td-antd/dist/index.less'; // 请确保支持 less，如不支持 less，则可直接引用 'td-antd/dist/index.css'。
+import { Title, FormItem } from 'td-antd';
+
+// 单个组件引入
+import Title from 'td-antd/es/title';
 
 // 卸载测试组件
 npm unlink td-antd
