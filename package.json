@@ -16,7 +16,7 @@
     "build": "umi-lib build",
     "lib": "umi-lib build --cjs babel",
     "es": "umi-lib build --esm babel",
-    "build:all": "umi-lib build --cjs babel --esm babel && npm run build"
+    "build:all": "umi-lib build --cjs babel --esm babel"
   },
   "keywords": [
     "react",
@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "antd": "^3.22.0",
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "lodash": "4.17.15"
   }
 }

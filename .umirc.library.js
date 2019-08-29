@@ -3,9 +3,9 @@ export default {
   cjs: 'rollup',
   umd: {
     name: 'tdAntd',
-    globals: {
-      react: 'React',
-    },
+    // globals: {
+    //   react: 'React',
+    // },
   },
   doc: {
     // repository: false,

@@ -26,9 +26,21 @@ import DescList from './index';
       }, {
         title: '电话',
         render: record => record.phone,
+      }, {
+        title: '描述',
+        dataIndex: 'desc.text',
       }
     ]}
-    dataSource={{ name: 'andy', age: 18, address: null, phone: '138xxxxxxxx' }}
+    dataSource={{
+      name: 'andy',
+      age: 18,
+      address: null,
+      phone: '138xxxxxxxx',
+      desc: {
+        code: 1,
+        text: 'dataIndex 的嵌套写法'
+      },
+    }}
   />
 </Playground>
 

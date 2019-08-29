@@ -1,29 +1,9 @@
 import React from 'react';
+import debounce from 'lodash.debounce';
 import Select from 'antd/es/select';
 import 'antd/es/select/style';
 import Spin from 'antd/es/spin';
 import 'antd/es/spin/style';
-
-function debounce(fn, time) {
-  // 定时器，用来 setTimeout
-  let timer;
-  // 返回一个函数，这个函数会在一个时间区间结束后的 delay 毫秒时执行 fn 函数
-  return function() {
-    // 保存函数调用时的上下文和参数，传递给 fn
-    const context = this;
-    // eslint-disable-next-line
-    const args = arguments;
-
-    // 每次这个返回的函数被调用，就清除定时器，以保证不执行 fn
-    clearTimeout(timer);
-
-    // 当返回的函数被最后一次调用后（也就是用户停止了某个连续的操作），
-    // 再过 time 毫秒就执行 fn
-    timer = setTimeout(() => {
-      fn.apply(context, args);
-    }, time)
-  }
-}
 
 export default class SelectSearch extends React.Component {
   constructor(props) {

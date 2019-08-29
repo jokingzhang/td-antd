@@ -10,6 +10,18 @@ import SelectSearch from './index';
 
 基于 Select 封装的带接口搜索的下拉框组件。
 
+<Playground>
+  <SelectSearch
+    placeholder="搜索名字"
+    fields={['code', 'name']}
+    url="./public/selectSearch.json"
+    afterFetch={res => res.dataObject}
+    callback={(value) => {
+      console.log(value);
+    }}
+  />
+</Playground>
+
 ## API
 
 支持原 [Select](https://ant-design.gitee.io/components/select-cn/) API
@@ -23,3 +35,5 @@ import SelectSearch from './index';
 |afterFetch|请求成功后需要返回给组件的列表数据|(res) => (res.list)|-|
 |customOption|自定义渲染下拉框内容|function(record)|-|
 |isData|是否返回所选项的完整数据|bool|false|
+
+> 注意：默认宽度是 100%
