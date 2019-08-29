@@ -14,7 +14,7 @@ import SelectSearch from './index';
   <SelectSearch
     placeholder="搜索名字"
     fields={['code', 'name']}
-    url="./public/selectSearch.json"
+    url="./public/selectSearch.json?code="
     afterFetch={res => res.dataObject}
     callback={(value) => {
       console.log(value);
