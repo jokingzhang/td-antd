@@ -1,5 +1,5 @@
 import React from 'react';
-import _debounce from 'lodash.debounce';
+import _debounce from 'lodash/debounce';
 import Select from 'antd/es/select';
 import 'antd/es/select/style';
 import Spin from 'antd/es/spin';

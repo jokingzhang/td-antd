@@ -1,5 +1,5 @@
 import * as React from 'react';
-import _get from 'lodash.get';
+import _get from 'lodash/get';
 import Descriptions from 'antd/es/descriptions';
 import 'antd/es/descriptions/style';
 
