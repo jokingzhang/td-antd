@@ -1,5 +1,5 @@
 import React from 'react';
-import debounce from 'lodash.debounce';
+import _debounce from 'lodash.debounce';
 import Select from 'antd/es/select';
 import 'antd/es/select/style';
 import Spin from 'antd/es/spin';
@@ -14,7 +14,7 @@ export default class SelectSearch extends React.Component {
       data: [],
       loading: false,
     };
-    this.onFetch = debounce(this.onFetch.bind(this), 600);
+    this.onFetch = _debounce(this.onFetch.bind(this), 600);
   }
 
   reset = () => {

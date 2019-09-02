@@ -1,5 +1,5 @@
 import * as React from 'react';
-import get from 'lodash.get';
+import _get from 'lodash.get';
 import Descriptions from 'antd/es/descriptions';
 import 'antd/es/descriptions/style';
 
@@ -36,7 +36,7 @@ export default class DescList extends React.Component {
         return null;
       }
 
-      const value = render ? render(dataSource) : get(dataSource, dataIndex, defaultValue);
+      const value = render ? render(dataSource) : _get(dataSource, dataIndex, defaultValue);
 
       return (
         // eslint-disable-next-line
