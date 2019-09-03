@@ -5,6 +5,7 @@ menu: 组件
 ---
 
 import { Playground } from 'docz';
+import { Row, Col } from 'antd';
 import SelectSearch from './index';
 
 ## SelectSearch
@@ -12,15 +13,33 @@ import SelectSearch from './index';
 基于 Select 封装的带接口搜索的下拉框组件。
 
 <Playground>
-  <SelectSearch
-    placeholder="搜索名字"
-    fields={['code', 'name']}
-    url="./public/selectSearch.json?code="
-    afterFetch={res => res.dataObject}
-    callback={(value) => {
-      console.log(value);
-    }}
-  />
+  <Row>
+    <Col span={12}>
+      <SelectSearch
+        placeholder="输入数字，单选"
+        fields={['cell', 'phone']}
+        // 使用公共接口进行测试
+        url="https://randomuser.me/api/?results="
+        afterFetch={res => res.results}
+        callback={(value) => {
+          console.log(value);
+        }}
+      />
+    </Col>
+    <Col span={12}>
+      <SelectSearch
+        mode="multiple"
+        placeholder="输入数字，多选"
+        fields={['cell', 'phone']}
+        // 使用公共接口进行测试
+        url="https://randomuser.me/api/?results="
+        afterFetch={res => res.results}
+        callback={(value) => {
+          console.log(value);
+        }}
+      />
+    </Col>
+  </Row>
 </Playground>
 
 ## API
