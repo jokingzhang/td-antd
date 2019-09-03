@@ -22,5 +22,16 @@ export default {
         ],
       },
     },
+    menu: [
+      '首页',
+      '更新日志',
+      {
+        name: '组件',
+        // menu: [
+        //   'DescList',
+        //   'DragModal',
+        // ]
+      }
+    ]
   },
 }
