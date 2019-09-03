@@ -1,0 +1,83 @@
+---
+name: toast
+route: /toast
+---
+
+import { Playground } from 'docz';
+import { Row, Col } from 'antd';
+import 'antd/dist/antd.css';
+import toast from './index';
+
+## toast
+
+基于 message 的二次封装
+
+<Playground>
+  <Row>
+    <Col span={6}>
+      <button
+        onClick={() => {
+          toast({ text: 'success' })
+        }}
+      >
+        success
+      </button>
+    </Col>
+    <Col span={6}>
+      <button
+        onClick={() => {
+          toast({
+            type: 'error',
+            text: 'error',
+          })
+        }}
+      >
+        error
+      </button>
+    </Col>
+    <Col span={6}>
+      <button
+        onClick={() => {
+          toast({
+            type: 'loading',
+            text: 'loading',
+            time: 2,
+          }).then(() => {
+            toast({ text: 'success' })
+          })
+        }}
+      >
+        loading.then
+      </button>
+    </Col>
+    <Col span={6}>
+      <button
+        onClick={() => {
+          toast({
+            type: 'loading',
+            text: 'loading',
+            time: 0,
+            cb: (hide) => {
+              setTimeout(hide, 2000);
+            }
+          })
+        }}
+      >
+        loading.cb
+      </button>
+    </Col>
+  </Row>
+</Playground>
+
+## API
+
+原 [message](https://ant-design.gitee.io/components/message-cn/) API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|type|提示类型|string|success|
+|text|提示内容|string|''|
+|time|自动关闭的延时，单位秒。设为 0 时不自动关闭。|number|3|
+|maxCount|最大显示数, 超过限制时，最早的消息会被自动关闭|number|1|
+|config|[全局配置](https://ant-design.gitee.io/components/message-cn/#message.config)|object|{}|
+|cb|回调函数|function(hide)|-|
