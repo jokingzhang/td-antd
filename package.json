@@ -1,6 +1,6 @@
 {
   "name": "td-antd",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -10,7 +10,7 @@
     "es"
   ],
   "scripts": {
-    "doc:dev": "umi-lib doc dev",
+    "start": "umi-lib doc dev",
     "doc:build": "umi-lib doc build",
     "doc:deploy": "umi-lib doc deploy",
     "build": "umi-lib build",
@@ -41,5 +41,6 @@
     "antd": "^3.22.0",
     "classnames": "^2.2.6",
     "lodash": "4.17.15"
-  }
+  },
+  "sideEffects": false
 }

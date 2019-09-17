@@ -20,6 +20,9 @@ export default {
         scripts: [
           { src: './public/redirect.js' },
         ],
+        links: [
+          { rel: 'stylesheet', href: './public/common.css' },
+        ],
       },
     },
     menu: [
