@@ -6,7 +6,7 @@
 import React from 'react';
 import Modal from 'antd/es/modal';
 import 'antd/es/modal/style';
-import styles from './index.module.less';
+import styles from './index.less';
 
 class DragModal extends React.PureComponent {
   constructor(props) {

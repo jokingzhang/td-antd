@@ -1,8 +1,9 @@
 export default {
   esm: 'rollup',
-  cjs: 'rollup',
+  // cjs: 'rollup',
+  cssModules: true,
   umd: {
-    name: 'tdAntd',
+    name: 'td',
     // globals: {
     //   react: 'React',
     // },
@@ -11,7 +12,7 @@ export default {
     // repository: false,
     themeConfig: {
       // mode: 'dark',
-      showPlaygroundEditor: false
+      // showPlaygroundEditor: false
     },
     base: '/td-antd/',
     // public: '/public',
@@ -30,10 +31,9 @@ export default {
       '更新日志',
       {
         name: '组件',
-        // menu: [
-        //   'DescList',
-        //   'DragModal',
-        // ]
+        menu: [
+          'LinkBtn',
+        ]
       }
     ]
   },

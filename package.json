@@ -10,13 +10,13 @@
     "es"
   ],
   "scripts": {
-    "start": "umi-lib doc dev",
-    "doc:build": "umi-lib doc build",
-    "doc:deploy": "umi-lib doc deploy",
-    "build": "umi-lib build",
-    "lib": "umi-lib build --cjs babel",
-    "es": "umi-lib build --esm babel",
-    "build:all": "umi-lib build --cjs babel --esm babel"
+    "start": "father doc dev",
+    "doc:build": "father doc build",
+    "doc:deploy": "father doc deploy",
+    "build": "father build",
+    "lib": "father build --cjs babel",
+    "es": "father build --esm babel",
+    "build:all": "father build --cjs babel --esm babel"
   },
   "keywords": [
     "react",
@@ -35,7 +35,7 @@
     "antd": ">=3.21.0"
   },
   "devDependencies": {
-    "umi-library": "^1.6.0"
+    "father": "^2.18.3"
   },
   "dependencies": {
     "antd": "^3.22.0",

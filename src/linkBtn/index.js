@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from './index.module.less';
+import styles from './index.less';
 
 export default class LinkBtn extends React.Component {
   static defaultProps = {
