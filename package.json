@@ -35,7 +35,7 @@
     "antd": ">=3.21.0"
   },
   "devDependencies": {
-    "father": "^2.18.3"
+    "father": "2.19.0"
   },
   "dependencies": {
     "antd": "^3.22.0",
