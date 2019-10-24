@@ -7,6 +7,7 @@ menu: 组件
 import { Playground } from 'docz';
 import { Form } from 'antd';
 import BaseDemo from './demo/base';
+import Preview from './demo/preview';
 
 ## FormItem
 
@@ -16,6 +17,12 @@ import BaseDemo from './demo/base';
 
 <Playground>
   <BaseDemo />
+</Playground>
+
+### 非 form 展示
+
+<Playground>
+  <Preview />
 </Playground>
 
 ## API
@@ -37,6 +44,7 @@ import BaseDemo from './demo/base';
 |extraRules|额外的规则，用法同 rules|array / object|[ ]|
 |valuePropName|适用 switch 场景，'checked'|string|'value'|
 |inputProps|Input 组件的属性 API|object|{ }|
+|defaultValue|在预览状态下，值为空时默认展示的字符|string|'--'|
 |itemType|申明组件类型，普通组件(default) / Number组件(number)|string|default|
 
 > 当 itemType="number" 时，只能输入数字，并可以使用以下属性<br />
