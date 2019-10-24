@@ -7,6 +7,7 @@ menu: 组件
 import { Playground } from 'docz';
 import { Form } from 'antd';
 import BaseDemo from './demo/base';
+import Preview from './demo/preview';
 
 ## FormItem
 
@@ -18,12 +19,18 @@ import BaseDemo from './demo/base';
   <BaseDemo />
 </Playground>
 
+### 非 form 展示
+
+<Playground>
+  <Preview />
+</Playground>
+
 ## API
 
 支持原 [Form](https://ant-design.gitee.io/components/form-cn/) API
 
-|参数|说明|类型|默认值|
-|:--|:--|:--|:--|
+|参数|说明|类型|默认值|版本|
+|:--|:--|:--|:--|:--|
 |form|经 Form.create() 包装过的组件会自带 this.props.form 属性，直接传给 FormItem 即可。`如果无，则该表单为“只读”`|object||
 |formItemLayout|表单布局样式|object|`{labelCol: { sm: { span: 10 } },wrapperCol: { sm: { span: 14 } }}`|
 |cols| formItemLayout 的简使用，数组表示左右占有空间，合计24|Array|[10, 14]|
@@ -37,6 +44,7 @@ import BaseDemo from './demo/base';
 |extraRules|额外的规则，用法同 rules|array / object|[ ]|
 |valuePropName|适用 switch 场景，'checked'|string|'value'|
 |inputProps|Input 组件的属性 API|object|{ }|
+|defaultValue|在预览状态下，值为空时默认展示的字符|string|'--'|1.3.3|
 |itemType|申明组件类型，普通组件(default) / Number组件(number)|string|default|
 
 > 当 itemType="number" 时，只能输入数字，并可以使用以下属性<br />

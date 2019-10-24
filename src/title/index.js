@@ -13,7 +13,7 @@
 import React from 'react';
 import Button from 'antd/es/button';
 import 'antd/es/button/style';
-import styles from './index.module.less';
+import styles from './index.less';
 
 export default class Title extends React.Component {
   static defaultProps = {

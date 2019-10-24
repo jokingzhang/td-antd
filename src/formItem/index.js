@@ -25,6 +25,7 @@ export default function FormItem({ className, children, ...props }) {
     isNegative = false,
     isInteger = false,
     message = '必填项',
+    defaultValue = '--'
   } = props;
 
   if (!form) {
@@ -36,7 +37,7 @@ export default function FormItem({ className, children, ...props }) {
         {...props}
         label={label}
       >
-        {children || initialValue || ' -- '}
+        {children || initialValue || defaultValue}
       </Form.Item>
     );
   }

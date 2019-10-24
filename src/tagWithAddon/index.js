@@ -15,15 +15,27 @@ import 'antd/es/tag/style';
 export default class TagWithAddon extends React.PureComponent {
   static defaultProps = {
     color: 'blue',
+    isBackground: true,
   };
 
   render() {
-    const { addonBefore, addonAfter, children, color } = this.props;
+    const { addonBefore, addonAfter, children, color, isBackground } = this.props;
 
     return (
       <React.Fragment>
         {addonBefore}
-        {children && <Tag color={color} style={addonBefore && { marginLeft: 8 }} {...this.props}>{children}</Tag>}
+        {children &&
+          <Tag
+            color={color}
+            style={{
+              marginLeft: addonBefore && 8,
+              background: !isBackground && 'none',
+            }}
+            {...this.props}
+          >
+            {children}
+          </Tag>
+        }
         {addonAfter}
       </React.Fragment>
     );
