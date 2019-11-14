@@ -5,7 +5,6 @@
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
-    "dist",
     "lib",
     "es"
   ],
@@ -13,10 +12,9 @@
     "start": "father doc dev",
     "doc:build": "father doc build",
     "doc:deploy": "father doc deploy",
-    "build": "father build",
+    "build": "father build --cjs babel --esm babel",
     "lib": "father build --cjs babel",
-    "es": "father build --esm babel",
-    "build:all": "father build --cjs babel --esm babel"
+    "es": "father build --esm babel"
   },
   "keywords": [
     "react",
