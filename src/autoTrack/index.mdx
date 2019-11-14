@@ -1,0 +1,25 @@
+---
+name: autoTrack
+route: /autoTrack
+menu: 组件
+---
+
+import { Playground } from 'docz';
+import Demo from './demo';
+
+## autoTrack
+
+轻量级埋点 [demo代码](https://github.com/long-zhuge/td-antd/tree/master/src/autoTrack/demo)
+
+<Playground>
+  <Demo />
+</Playground>
+
+## API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|logpage|页面级埋点标示，作用于节点的属性|object/string||
+|logevent|click事件埋点，作用于节点的属性|object/string||
+|pageCallback|页面埋点的回调函数，只会触发一次|function(log)||
+|eventCallback|点击事件埋点的回调函数|function(log)||
