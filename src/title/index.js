@@ -10,7 +10,7 @@
 * }
 * */
 
-import React from 'react';
+import * as React from 'react';
 import Button from 'antd/es/button';
 import 'antd/es/button/style';
 import styles from './index.less';

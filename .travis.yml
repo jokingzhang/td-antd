@@ -3,10 +3,6 @@ language: node_js # 使用 nodejs 作为构建语言
 node_js:
   - "8" ## 版本为 8 以上
 
-cache:
-  directories:
-    - node_modules
-
 before_install:
 
 install:

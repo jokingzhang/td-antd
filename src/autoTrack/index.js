@@ -3,21 +3,6 @@
 * TODO：
 *  1、目前只针对 click 事件进行埋点处理。其他事件持续优化中
 *  2、页面级埋点全局只会触发一次，切换路由后也不会重新发起，后续将在优化中进行监听组件销毁事件
-*
-* 使用方法：
-* import { autoTrack } from 'td-antd';
-*
-* // 此方法全局调用一次即可
-* AutoTrack({
-*   pageCallback: (log) => {} // 页面埋点回调
-*   eventCallback: (log) => {} // click 事件埋点回调
-* })
-*
-* ReactNode 中标记案例，如:
-*
-* <div logpage={{ type: '页面级' }}>
-*   <button logevent={{ type: 'click 事件触发' }}>按钮</button>
-* </div>
 * */
 
 import * as React from 'react';

@@ -3,7 +3,7 @@
 * title 部分可进行拖拽
 * */
 
-import React from 'react';
+import * as React from 'react';
 import Modal from 'antd/es/modal';
 import 'antd/es/modal/style';
 import styles from './index.less';
