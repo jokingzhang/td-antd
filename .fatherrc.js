@@ -1,7 +1,7 @@
 export default {
-  cssModules: true,
-  esm: 'rollup',
-  cjs: 'rollup',
+  // cssModules: true,
+  esm: 'babel',
+  cjs: 'babel',
   // // 默认是 .module.css 走 css modules，.css 不走 css modules。配置 cssModules 为 true 后，全部 css 文件都走 css modules。（less 文件同理）
   umd: false,
   // umd: {

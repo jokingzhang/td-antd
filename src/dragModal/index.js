@@ -4,9 +4,10 @@
 * */
 
 import * as React from 'react';
+import classNames from 'classnames';
 import Modal from 'antd/es/modal';
 import 'antd/es/modal/style';
-import styles from './index.less';
+import './index.less';
 
 class DragModal extends React.PureComponent {
   constructor(props) {
@@ -53,7 +54,7 @@ class DragModal extends React.PureComponent {
     /*
     * 实现点击后，当前浮层在最上面
     * */
-    const nodeList = document.getElementsByClassName(styles.drag_modal);
+    const nodeList = document.getElementsByClassName('td-dragModal');
     if (nodeList.length > 0) {
       Array.from(nodeList).forEach(item => item.style.zIndex = 9999);
       this.dragDom.style.zIndex = 10000;
@@ -97,10 +98,10 @@ class DragModal extends React.PureComponent {
       <Modal
         {...this.props}
         mask={false}
-        wrapClassName={`${styles.drag_modal} d_${this.id} ${wrapClassName}`}
+        wrapClassName={classNames('td-dragModal', `d_${this.id}`, wrapClassName)}
         title={
           <div
-            className={`${styles.drag_title}`}
+            className="td-dragTitle"
             onMouseDown={this.onMouseDown}
             onMouseUp={this.onMouseUp}
           >

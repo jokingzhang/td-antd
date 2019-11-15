@@ -11,9 +11,10 @@
 * */
 
 import * as React from 'react';
+import classNames from 'classnames';
 import Button from 'antd/es/button';
 import 'antd/es/button/style';
-import styles from './index.less';
+import './index.less';
 
 export default class Title extends React.Component {
   static defaultProps = {
@@ -46,9 +47,11 @@ export default class Title extends React.Component {
 
     return (
       <div className={wrapClassName}>
-        <div className={`${styles.header} ${line && styles.line}`}>
+        <div className={classNames('td-title-header', {
+          'td-title-line': line,
+        })}>
           <div>
-            <span className={styles.title}>{title}</span>
+            <span className="td-title-title">{title}</span>
             {this.renderBtn()}
           </div>
           {rightExtra}
