@@ -1,6 +1,6 @@
 import * as React from 'react';
 import classNames from 'classnames';
-import './index.less';
+import styles from './index.module.less';
 
 export default class LinkBtn extends React.Component {
   static defaultProps = {
@@ -14,7 +14,7 @@ export default class LinkBtn extends React.Component {
       <button
         type="button"
         {...this.props}
-        className={classNames('td-linkBtn-normal', className)}
+        className={classNames(styles.normal, className)}
       >
         {children}
       </button>

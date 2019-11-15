@@ -33,10 +33,10 @@
     "antd": ">=3.21.0"
   },
   "devDependencies": {
-    "father": "2.23.2"
+    "father": "2.24.1"
   },
   "dependencies": {
-    "antd": "^3.22.0",
+    "antd": "^3.21.0",
     "classnames": "^2.2.6",
     "lodash": "4.17.15"
   },
