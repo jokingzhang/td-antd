@@ -6,6 +6,7 @@ menu: 组件
 
 import { Playground } from 'docz';
 import ModalBox from './index';
+import LinkBtn from '../linkBtn';
 
 ## ModalBox
 
@@ -20,7 +21,7 @@ import ModalBox from './index';
     render () {
       return (
         <React.Fragment>
-          <button onClick={() => this.handleClick()}>Show Modal</button>
+          <LinkBtn onClick={() => this.handleClick()}>Show</LinkBtn>
           <ModalBox
             title="demo"
             ref={(r) => {this.modalRef = r}}
