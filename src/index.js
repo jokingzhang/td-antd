@@ -10,3 +10,4 @@ export { default as Title } from './title';
 export { default as SelectSearch } from './selectSearch';
 export { default as toast } from './toast';
 export { default as autoTrack } from './autoTrack';
+export { default as DivisionBox } from './divisionBox';

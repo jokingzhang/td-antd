@@ -1,0 +1,20 @@
+---
+name: divisionBox
+route: /divisionBox
+menu: 组件
+---
+
+import { Playground } from 'docz';
+import LinkBtn from '../linkBtn';
+import DivisionBox from './index';
+
+## DivisionBox
+
+通常用于 Table 组件的操作栏，将操作按钮隔开。使用该组件时，请统一子元素是 a or button 标签
+
+<Playground>
+  <DivisionBox>
+    <LinkBtn>btn1</LinkBtn>
+    <LinkBtn>btn2</LinkBtn>
+  </DivisionBox>
+</Playground>
