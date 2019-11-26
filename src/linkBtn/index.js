@@ -14,7 +14,7 @@ export default class LinkBtn extends React.Component {
       <button
         type="button"
         {...this.props}
-        className={classNames('td-linkBtn-normal', className)}
+        className={classNames('td-linkBtn', className)}
       >
         {children}
       </button>
