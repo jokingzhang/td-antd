@@ -1,6 +1,6 @@
 {
   "name": "td-antd",
-  "version": "1.3.12",
+  "version": "1.3.13",
   "description": "",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -12,9 +12,9 @@
     "start": "father doc dev",
     "doc:build": "father doc build",
     "doc:deploy": "father doc deploy",
-    "build": "father build --cjs babel --esm babel",
-    "lib": "father build --cjs babel",
-    "es": "father build --esm babel"
+    "build": "father build",
+    "lib": "father build --cjs rollup",
+    "es": "father build --esm rollup"
   },
   "keywords": [
     "react",
