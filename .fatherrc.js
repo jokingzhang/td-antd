@@ -4,6 +4,9 @@ export default {
   esm: 'babel',
   cjs: 'babel',
   umd: false,
+  extraBabelPlugins: [
+    ['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }],
+  ],
   // umd: {
   //   name: 'td',
   //   globals: {
