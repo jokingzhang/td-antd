@@ -1,9 +1,6 @@
 import * as React from 'react';
 import _debounce from 'lodash/debounce';
-import Select from 'antd/es/select';
-import 'antd/es/select/style';
-import Spin from 'antd/es/spin';
-import 'antd/es/spin/style';
+import { Select, Spin } from 'antd';
 
 export default class SelectSearch extends React.Component {
   constructor(props) {
@@ -61,9 +58,9 @@ export default class SelectSearch extends React.Component {
 
     return (
       <Select
+        value={value}
         {...this.props}
         showSearch
-        value={value}
         notFoundContent={loading ? <Spin size="small" /> : '暂无数据'}
         filterOption={false}
         onSearch={this.onFetch}
