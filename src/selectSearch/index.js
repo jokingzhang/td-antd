@@ -38,12 +38,11 @@ export default class SelectSearch extends React.Component {
     });
   }
 
-  // 选择后触发，提供 callback 回调
   handleChange = (value) => {
-    const { callback = () => {}} = this.props;
+    const { onChange} = this.props;
 
     this.setState({ value: value }, () => {
-      callback(value);
+      onChange && onChange(value);
     });
   };
 

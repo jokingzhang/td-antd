@@ -10,7 +10,7 @@ import SelectSearch from './index';
 
 ## SelectSearch
 
-基于 Select 封装的带接口搜索的下拉框组件。
+基于 Select 封装的带接口搜索的下拉框组件。可用于 Form 的受控组件
 
 <Playground>
   <Row>
@@ -21,20 +21,21 @@ import SelectSearch from './index';
         // 使用公共接口进行测试
         url="https://randomuser.me/api/?results="
         afterFetch={res => res.results}
-        callback={(value) => {
+        onChange={(value) => {
           console.log(value);
         }}
       />
     </Col>
     <Col span={12}>
       <SelectSearch
+        isData
         mode="multiple"
         placeholder="输入数字，多选"
         fields={['cell', 'phone']}
         // 使用公共接口进行测试
         url="https://randomuser.me/api/?results="
         afterFetch={res => res.results}
-        callback={(value) => {
+        onChange={(value) => {
           console.log(value);
         }}
       />
@@ -48,10 +49,10 @@ import SelectSearch from './index';
 
 |参数|说明|类型|默认值|
 |:--|:--|:--|:--|
-|url|请求地址，请带上请求参数，如：`/xxx/xxx.json?keywords=`|string|-|
+|url|请求地址，请带上请求参数，如：`/xxx/xxx.json?keywords=`；只支持 get 请求|string|-|
 |placeholder|提示文案|string|-|
 |fields|渲染需要的字段`[key, label]`|array|-|
-|callback|选择后的回调函数，单选时返回普通对象，多选时返回数组|function(array/object)|-|
+|onChange|选择后的回调函数，单选时返回普通对象，多选时返回数组|function(array/object)|-|
 |afterFetch|请求成功后需要返回给组件的列表数据|(res) => (res.list)|-|
 |customOption|自定义渲染下拉框内容|function(record)|-|
 |isData|是否返回所选项的完整数据|bool|false|

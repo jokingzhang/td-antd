@@ -1,0 +1,62 @@
+---
+name: PopoverBox
+route: /popoverBox
+menu: 组件
+---
+
+import { Playground } from 'docz';
+import PopoverBox from './index';
+import LinkBtn from '../linkBtn';
+import DivisionBox from '../divisionBox';
+
+## PopoverBox
+
+基于 Popover 的二次封装。
+
+<Playground>
+  {class Example extends React.Component {
+    handleClick () {
+      this.modalRef.show();
+    }
+
+    render () {
+      return (
+        <React.Fragment>
+          <DivisionBox>
+            <PopoverBox
+              title="title"
+              ref={(r) => {this.modalRef = r}}
+              content="这里是内容"
+              onOk={() => { console.log('Ok') }}
+              onCancel={() => { console.log('Cancel') }}
+            >
+              <LinkBtn onClick={() => this.handleClick()}>Show1</LinkBtn>
+            </PopoverBox>
+            <PopoverBox
+              title="title"
+              placement="right"
+              content="这里是内容"
+            >
+              <LinkBtn>Show2</LinkBtn>
+            </PopoverBox>
+          </DivisionBox>
+        </React.Fragment>
+      )
+    }
+  }}
+</Playground>
+
+## API
+
+支持原 [Popover](https://ant-design.gitee.io/components/popover-cn/) API
+
+|参数|说明|类型|默认值|
+|:--|:--|:--|:--|
+|show(callback)|浮层显示的函数|function||
+|hide(callback)|浮层隐藏的函数|function||
+|onOk|点击确认按钮的回调函数|function||
+|onCancel|点击取消按钮的回调函数|function||
+|okText|确认按钮的文案|string|确定|
+|cancelText|取消按钮的文案|string|取消|
+|okButtonProps|确定按钮的属性|object|{}|
+|cancelButtonProps|取消按钮的属性|object|{}|

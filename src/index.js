@@ -11,3 +11,4 @@ export { default as SelectSearch } from './selectSearch';
 export { default as toast } from './toast';
 export { default as autoTrack } from './autoTrack';
 export { default as DivisionBox } from './divisionBox';
+export { default as PopoverBox } from './popoverBox';
